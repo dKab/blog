@@ -1,3 +1,4 @@
 #!/bin/bash
-cd /home/ubuntu/website/
-rm -rf * .*
+cd /home/ubuntu/
+rm -rf website
+mkdir website
