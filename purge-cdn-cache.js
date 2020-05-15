@@ -20,6 +20,10 @@ axios
     .catch((error) => {
         console.error('Couldn\'t bust cache');
         console.log(error);
-        fs.writeFileSync('deploy-logs.txt',  JSON.stringify(urls) + '\nerror:' + JSON.stringify(error));
+        fs.writeFileSync('deploy-logs.txt',  `
+        headers: ${JSON.stringify(headers)}
+        ${JSON.stringify(urls)}
+        error: ${JSON.stringify(error)}
+        `);
     })
 
