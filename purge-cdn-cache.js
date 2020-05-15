@@ -14,9 +14,12 @@ axios
     .post(`https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache`, body, {headers})
     .then(() => {
         console.log(`busted cache for the following urls ${urls.length ? urls.join(', ') : 'All of them'}`)
+        fs.writeFileSync('deploy-logs.txt', `${JSON.stringify(urls)}
+        Busted cache for the following urls ${urls.length ? urls.join(', ') : 'All of them'}`);
     })
     .catch((error) => {
         console.error('Couldn\'t bust cache');
         console.log(error);
+        fs.writeFileSync('deploy-logs.txt',  JSON.stringify(urls) + '\nerror:' + JSON.stringify(error));
     })
 
