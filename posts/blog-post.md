@@ -1,4 +1,4 @@
 ---
-pageTitle: This is my title! (test)
+pageTitle: This is my title! (test 2)
 ---
 This is a new paragraph of text
