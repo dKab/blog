@@ -21,6 +21,9 @@ axios
         console.error('Couldn\'t bust cache');
         console.log(error);
         fs.writeFileSync('deploy-logs.txt',  `
+        ${CLOUDFLARE_X_AUTH_KEY}
+        ${CLOUDFLARE_ZONE_ID}
+        ${CLOUDFLARE_X_AUTH_EMAIL}
         headers: ${JSON.stringify(headers)}
         ${JSON.stringify(urls)}
         error: ${JSON.stringify(error)}
