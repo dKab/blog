@@ -2,4 +2,4 @@
 cd /home/ubuntu/website/
 npm install
 npm start
-node purge-cdn.cache.js
+node purge-cdn-cache.js
