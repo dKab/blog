@@ -2,4 +2,4 @@
 cd /home/ubuntu/website/
 npm install
 npm start
-node purge-cdn-cache.js
+CLOUDFLARE_X_AUTH_KEY=$CLOUDFLARE_X_AUTH_KEY CLOUDFLARE_X_AUTH_EMAIL=$CLOUDFLARE_X_AUTH_EMAIL CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID node purge-cdn-cache.js
