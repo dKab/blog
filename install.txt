@@ -1,1 +1,0 @@
-The Install deployment lifecycle event successfully completed.
