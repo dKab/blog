@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const parameters = process.env.PARAMETERS;
+const parameters = JSON.parse(process.env.PARAMETERS);
 const CLOUDFLARE_X_AUTH_EMAIL = parameters.Parameters
     .find(param => param.Name === 'CLOUDFLARE_X_AUTH_EMAIL').Value;
 const CLOUDFLARE_X_AUTH_KEY = parameters.Parameters
