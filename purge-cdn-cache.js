@@ -1,7 +1,13 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const {CLOUDFLARE_X_AUTH_KEY, CLOUDFLARE_X_AUTH_EMAIL, CLOUDFLARE_ZONE_ID } = process.env;
+const parameters = process.env.PARAMETERS;
+const CLOUDFLARE_X_AUTH_EMAIL = parameters.Parameters
+    .find(param => param.Name === 'CLOUDFLARE_X_AUTH_EMAIL').Value;
+const CLOUDFLARE_X_AUTH_KEY = parameters.Parameters
+    .find(param => param.Name === 'CLOUDFLARE_X_AUTH_KEY').Value;
+const CLOUDFLARE_ZONE_ID = parameters.Parameters
+    .find(param => param.Name === 'CLOUDFLARE_ZONE_ID').Value;
 
 const urls = fs.readFileSync('urls-to-purge.txt', 'utf8').toString().split('\n');
 const headers = {
