@@ -15,13 +15,25 @@ const headers = {
     'X-Auth-Key': CLOUDFLARE_X_AUTH_KEY,
     'Content-Type': 'application/json'
 };
-const body = urls.length ? {files: urls} : { purge_everything: true};
+
+if (urls.length === 0  || (urls.length === 1 && !urls[0])) {
+    return;
+} 
+
+let body, isAll = false;
+if (urls.length === 1 && urls[0] === 'All') {
+    body = { purge_everything: true};
+    isAll = true;
+} else if (urls.length > 0) {
+    body = {files: urls};
+}
+
 axios
     .post(`https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache`, body, {headers})
     .then(() => {
         fs.writeFileSync('deploy-logs.txt', `
         Busted cache for the following urls:
-         ${urls.length ? urls.join(', ') : 'All of them'}
+         ${isAll ? 'All of them' : urls.join(', ')}
          `);
     })
     .catch((error) => {

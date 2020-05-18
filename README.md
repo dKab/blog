@@ -7,3 +7,7 @@ Whenever I commit changes to a page I need to add the page's url to ```urls-to-p
 - Also if you change a title of a post, purge cache for home page as well!
 
 - I need to specify both **www** and **non-www** urls for the same page, because the site is accessible either way and these are different urls!
+
+- Leave the file empty if no purging is required
+  
+- Write single line ```All``` to purge everything (hardly ever needed) 
