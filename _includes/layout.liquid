@@ -3,7 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title>My Blog</title>
+        <title>{{pageTitle}}</title>
+        <!-- capture the CSS content as a Nunjucks variable -->
+        {% capture css %}
+        {% include styles.css %}
+        {% endcapture %}
+        <!-- feed it through our cssmin filter to minify -->
+        <style>
+        {{ css | cssmin | safe }}
+        </style>
     </head>
     <body>
         <main>
