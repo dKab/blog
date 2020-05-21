@@ -6,8 +6,12 @@
         <title>My Blog</title>
     </head>
     <body>
-        <h1>{{ pageTitle }}</h1>
-
-        {{ content }}
+        <main>
+            <h1>{{ pageTitle }}</h1>
+            {%- if page.url != '/' -%}
+                 <a href="/">&#8592; Home</a>
+            {%- endif -%}
+            {{ content }}
+        </main>
     </body>
 </html>
