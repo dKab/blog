@@ -42,3 +42,11 @@ pre {
     font-weight: 400;
     line-height: 23px;
 }
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+a, a:visited {
+    color: #0071bc;
+}
