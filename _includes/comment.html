@@ -1,39 +1,39 @@
-<article id="comment{% unless include.r %}{{ index | prepend: '-' }}{% else %}{{ include.index | prepend: '-' }}{% endunless %}"
-  class="js-comment comment {% if include.name == site.author.name %}admin{% endif %} {% unless include.replying_to == 0 %}child{% endunless %}"
-  uid="{{ include.uid }}">
+<article id="comment{% unless r %}{{ index | prepend: '-' }}{% else %}{{ index | prepend: '-' }}{% endunless %}"
+  class="js-comment comment {% if name == site.author.name %}admin{% endif %} {% unless replying_to == 0 %}child{% endunless %}"
+  uid="{{ uid }}">
 
   <div class="comment__author">
-    {{ include.name }},
+    {{ name }},
     <span class="comment__date">
-      {% if include.date %}
-        {% if include.index %}
-          <a href="#comment{{ include.index | prepend: '-' }}" title="Permalink to this comment">
+      {% if date %}
+        {% if index %}
+          <a href="#comment{{ index | prepend: '-' }}" title="Permalink to this comment">
         {% endif %}
-        {{ include.date | date_to_long_string }}
+        {{ date | date: "%Y-%m-%d %H:%M" }}
         {% comment %}
-          {% include format-date.html date=include.date time=false weekDay=false %}
+          {% include format-date.html, date: date, time: false, weekDay: false %}
         {% endcomment %}
-        {% if include.index %}</a>{% endif %}
+        {% if index %}</a>{% endif %}
       {% endif %}
     </span>
   </div>
 
   <div class="comment__body">
-    {{ include.message | markdownify }}
+    {{ message }}
   </div>
 
-  {% unless include.replying_to != 0 %}
+  {% unless replying_to != 0 %}
     <div class="comment__meta">
-      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('comment-{{ include.index }}', '{{ include.index }}', 'respond', '{{ page.slug }}', '{{ include.uid }}')">↪&#xFE0E; Reply to {{ include.name }}</a>
+      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('comment-{{ index }}', '{{ index }}', 'respond', '{{ page.fileSlug }}', '{{ uid }}')">↪&#xFE0E; Reply to {{ name }}</a>
     </div>
   {% endunless %}
 </article>
 
-{% capture i %}{{ include.index }}{% endcapture %}
-{% assign replies = site.data.comments[page.slug] | where_exp: 'item', 'item.replying_to == i' %}
+{% capture i %}{{ index }}{% endcapture %}
+{% assign replies = site.data.comments[page.fileSlug] | where: 'replying_to', i %}
 {% assign replies_date = replies | sort: 'date' %}
 {% for reply in replies_date %}
-  {% assign index       = forloop.index | prepend: '-' | prepend: include.index %}
+  {% assign index       = forloop.index | prepend: '-' | prepend: index %}
   {% assign r           = reply.replying_to %}
   {% assign replying_to = r | to_integer %}
   {% assign email       = reply.email %}
@@ -41,5 +41,5 @@
   {% assign url         = reply.url %}
   {% assign date        = reply.date %}
   {% assign message     = reply.message %}
-  {% include comment.html index=index replying_to=replying_to email=email name=name url=url date=date message=message %}
+  {% include comment.html, index: index, replying_to: replying_to, email: email, name: name, url: url, date: date, message: message %}
 {% endfor %}

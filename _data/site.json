@@ -3,5 +3,8 @@
     "reCaptcha": {
         "siteKey": "6LcnUPsUAAAAADGpKORjrx8s7VKMHrlI1W-8E5x9",
         "secret": "MaSevX3Rftgefq9BrH3iF5FlPLafTER9mGvzEg0qJ1e/68ysmrDGR59dJshHJ5RHWsuVPNiwVe1dXEvdjitrb5DX3aMw4fAqj+1qhFMV9zU4lMieC7JhB9kW6FhHeSZpmY/68oUL2m61DSyur5D5rSIa1DrK50I/fO/aqO+mUwRC1iUJkDCBGCuK8BQDavogaYMuPtGvQb6M/o7h3PvanKG8qLF++F8U3g1ZdnqxGFXaJzWmO72BT5KYR+n1IVwIWUFZs25FGaRh6rANCe5NBLuq7+gSgKQhsEirQl0rosdwtJ0gDJJri+brZ2aXRjNVThYTtzW/m5xtclMaERlh1eEMFQNUNpbusNjXHAHpN6Uv50GXT/zzoc6r/89mhvjXpek8YGE0s7BpC9ha8YCc8pxEJwvNmFQ8HD0jLuxwQcKtjf/FOYbQehdQ1k0Z3ISkW/5Zy3XMhv258szULVipq8onq0h6hcTSMGKv+JPL3Aj3Wy5ArMGLfZQzhbMPtFBGorfmZSBbmHqQY4XgpK401etf5vrTdaM31QE9dl1o1F7yyBAjCve/roonmLSkN+tLcwoODGrBcYtYdU6vUtffDtG5UOz5INckFlNnpOaUKQiGLJjK8MXbE5pnACaG3F8s26GbdGQcxxj+VcHLv+htp31WBiLfbxl7xY3aN7MT9fs="
+    },
+    "author": {
+        "name": "Dmitrii Kabardinov"
     }
 }

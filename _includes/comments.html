@@ -7,7 +7,7 @@
     <hr>
     <div class="comments__existing">
       <h2>Comments</h2>
-      {% assign comments = site.data.comments[page.fileSlug | where_exp: "item", "item.replying_to == ''" %}
+      {% assign comments = site.data.comments[page.fileSlug] | where: "replying_to", "" %}
       {% assign comments_by_date = comments | sort: 'date' | reverse %}
       <!-- List main comments in reverse date order, newest first. List replies in date order, oldest first. -->
       {% for comment in comments_by_date %}
@@ -20,7 +20,7 @@
       {% assign date        = comment.date %}
       {% assign message     = comment.message %}
       {% assign uid         = comment._id %}
-      {% include comment.html index=index replying_to=replying_to email=email name=name url=url date=date message=message uid=uid %}
+      {% include comment.html, index: index, replying_to: replying_to, email: email, name: name, url: url, date: date, message: message, uid: uid %}
       {% endfor %}
     </div>
     {% endif %}
