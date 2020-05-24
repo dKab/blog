@@ -43,7 +43,7 @@ pre {
     font-weight: 400;
     line-height: 23px;
 }
-main {
+.wrapper {
     max-width: 800px;
     margin: auto;
 }

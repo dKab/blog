@@ -11,23 +11,25 @@
         <!-- feed it through our cssmin filter to minify -->
         <style>
         {{ css | cssmin | safe }}
-        {% if comments == true %}
+        {% if commentsEnabled == true %}
             {% include comments.css %}
         {% endif %}
         </style>
     </head>
     <body>
-        <main>
-            <h1>{{ pageTitle }}</h1>
-            {%- if page.url != '/' -%}
-                 <a href="/">&#8592; Home</a>
-            {%- endif -%}
-            {{ content }}
-        </main>
-        <footer>
-        {% if comments == true %}
-            {% include comments.html %}
-        {% endif %}
-        </footer>
+        <div class="wrapper">
+            <main>
+                <h1>{{ pageTitle }}</h1>
+                {%- if page.url != '/' -%}
+                     <a href="/">&#8592; Home</a>
+                {%- endif -%}
+                {{ content }}
+            </main>
+            <footer>
+            {% if commentsEnabled == true %}
+                {% include comments.html %}
+            {% endif %}
+            </footer>
+        </div>
     </body>
 </html>

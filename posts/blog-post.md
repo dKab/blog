@@ -1,6 +1,5 @@
 ---
 pageTitle: This is my title! (test 2) (test!)
-comments: true
 ---
 This is a new paragraph of text
 

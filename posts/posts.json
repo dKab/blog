@@ -1,5 +1,5 @@
 {
     "layout": "layout.liquid",
     "tags": ["posts"],
-    "comments": true
+    "commentsEnabled": true
 }
