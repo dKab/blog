@@ -1,14 +1,14 @@
 <section class="comments">
     <p> Page slug is: {{ page.fileSlug }} </p>
-    {{ site.data.comments | jsonify }}
   
     {% if site.data.comments[page.fileSlug] %}
     <!-- Existing comments -->
     <hr>
     <div class="comments__existing">
       <h2>Comments</h2>
-      {% assign comments = site.data.comments[page.fileSlug] | where: "replying_to", "" %}
-      {% assign comments_by_date = comments | sort: 'date' | reverse %}
+      {% assign comments = site.data.comments[page.fileSlug] | objToArray | where: "replying_to", "" %}
+      {% assign comments_by_date = comments | sortBy: 'date' | reverse %}
+
       <!-- List main comments in reverse date order, newest first. List replies in date order, oldest first. -->
       {% for comment in comments_by_date %}
       {% assign index       = forloop.length | plus: 1 | minus: forloop.index %}
@@ -20,14 +20,14 @@
       {% assign date        = comment.date %}
       {% assign message     = comment.message %}
       {% assign uid         = comment._id %}
-      {% include comment.html, index: index, replying_to: replying_to, email: email, name: name, url: url, date: date, message: message, uid: uid %}
+      {% include 'comment', index: index, replying_to: replying_to, email: email, name: name, url: url, date: date, message: message, uid: uid %}
       {% endfor %}
     </div>
     {% endif %}
   
     <!-- New comment form -->
     <div id="respond" class="comment__new">
-      {% include comment_form.html %}
+      {% include 'comment_form' %}
     </div>
   </section>
   

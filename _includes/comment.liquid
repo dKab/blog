@@ -10,9 +10,6 @@
           <a href="#comment{{ index | prepend: '-' }}" title="Permalink to this comment">
         {% endif %}
         {{ date | date: "%Y-%m-%d %H:%M" }}
-        {% comment %}
-          {% include format-date.html, date: date, time: false, weekDay: false %}
-        {% endcomment %}
         {% if index %}</a>{% endif %}
       {% endif %}
     </span>
@@ -30,8 +27,8 @@
 </article>
 
 {% capture i %}{{ index }}{% endcapture %}
-{% assign replies = site.data.comments[page.fileSlug] | where: 'replying_to', i %}
-{% assign replies_date = replies | sort: 'date' %}
+{% assign replies = site.data.comments[page.fileSlug] | objToArray | where: 'replying_to', i %}
+{% assign replies_date = replies | sortBy : 'date' %}
 {% for reply in replies_date %}
   {% assign index       = forloop.index | prepend: '-' | prepend: index %}
   {% assign r           = reply.replying_to %}
@@ -41,5 +38,5 @@
   {% assign url         = reply.url %}
   {% assign date        = reply.date %}
   {% assign message     = reply.message %}
-  {% include comment.html, index: index, replying_to: replying_to, email: email, name: name, url: url, date: date, message: message %}
+  {% include 'comment', index: index, replying_to: replying_to, email: email, name: name, url: url, date: date, message: message %}
 {% endfor %}

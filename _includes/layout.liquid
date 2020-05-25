@@ -6,13 +6,13 @@
         <title>{{pageTitle}}</title>
         <!-- capture the CSS content as a Nunjucks variable -->
         {% capture css %}
-        {% include styles.css %}
+        {% include 'styles.css' %}
         {% endcapture %}
         <!-- feed it through our cssmin filter to minify -->
         <style>
         {{ css | cssmin | safe }}
         {% if commentsEnabled == true %}
-            {% include comments.css %}
+            {% include 'comments.css' %}
         {% endif %}
         </style>
     </head>
@@ -27,7 +27,7 @@
             </main>
             <footer>
             {% if commentsEnabled == true %}
-                {% include comments.html %}
+                {% include 'comments' %}
             {% endif %}
             </footer>
         </div>
