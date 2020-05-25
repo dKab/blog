@@ -2,7 +2,7 @@
 # of the API bridge enpoint, i.e., you can different configurations even within the same staticman.yml
 # file all under different keys
 comments:
-  allowedFields: ["name", "email", "url", "message", "replying_to_uid"]
+  allowedFields: ["name", "email", "url", "message", "replying_to_uid", "replying_to"]
   branch: master
   commitMessage: "Comment from {fields.name} on {options.slug}"
   filename: "entry{@timestamp}"
