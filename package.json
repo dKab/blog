@@ -13,6 +13,7 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "axios": "^0.19.2",
-    "clean-css": "^4.2.3"
+    "clean-css": "^4.2.3",
+    "date-fns": "^2.14.0"
   }
 }

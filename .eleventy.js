@@ -1,4 +1,5 @@
 const CleanCSS = require("clean-css");
+const format = require('date-fns/format')
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true
@@ -19,10 +20,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter('toCollection', function(val) {
     return JSON.parse(val);
-  })
+  });
 
   eleventyConfig.addFilter('getType', function(val) {
     return typeof val;
+  });
+
+  eleventyConfig.addFilter('formatTimestampAsDate', function(timestamp, formatString) {
+    const date = new Date();
+    date.setTime(timestamp * 1000);
+    return format(date, formatString);
   })
  
   eleventyConfig.addFilter('sortBy', function(array, key) {
