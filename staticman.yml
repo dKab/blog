@@ -29,3 +29,19 @@ comments:
     enabled: true
     siteKey: 6LcnUPsUAAAAADGpKORjrx8s7VKMHrlI1W-8E5x9
     secret: MaSevX3Rftgefq9BrH3iF5FlPLafTER9mGvzEg0qJ1e/68ysmrDGR59dJshHJ5RHWsuVPNiwVe1dXEvdjitrb5DX3aMw4fAqj+1qhFMV9zU4lMieC7JhB9kW6FhHeSZpmY/68oUL2m61DSyur5D5rSIa1DrK50I/fO/aqO+mUwRC1iUJkDCBGCuK8BQDavogaYMuPtGvQb6M/o7h3PvanKG8qLF++F8U3g1ZdnqxGFXaJzWmO72BT5KYR+n1IVwIWUFZs25FGaRh6rANCe5NBLuq7+gSgKQhsEirQl0rosdwtJ0gDJJri+brZ2aXRjNVThYTtzW/m5xtclMaERlh1eEMFQNUNpbusNjXHAHpN6Uv50GXT/zzoc6r/89mhvjXpek8YGE0s7BpC9ha8YCc8pxEJwvNmFQ8HD0jLuxwQcKtjf/FOYbQehdQ1k0Z3ISkW/5Zy3XMhv258szULVipq8onq0h6hcTSMGKv+JPL3Aj3Wy5ArMGLfZQzhbMPtFBGorfmZSBbmHqQY4XgpK401etf5vrTdaM31QE9dl1o1F7yyBAjCve/roonmLSkN+tLcwoODGrBcYtYdU6vUtffDtG5UOz5INckFlNnpOaUKQiGLJjK8MXbE5pnACaG3F8s26GbdGQcxxj+VcHLv+htp31WBiLfbxl7xY3aN7MT9fs=
+  # Notification settings. When enabled, users can choose to receive notifications
+  # via email when someone adds a reply or a new comment. This requires an account
+  # with Mailgun, which you can get for free at http://mailgun.com.
+  notifications:
+    # Enable notifications
+    enabled: true
+
+    # (!) ENCRYPTED
+    #
+    # Mailgun API key
+    apiKey: "2oZf9SEvDlsn3Q4DtCJuVBTi1nM3PJ3DH5mgOJ7lJhFUolh4tGxY6njoad1Dwv17lZKR/b0jmJ4hiHxRBI93y+HYlxMVKUQC4D3AKsNsesdH3XH4XfIfVcp3IBE37IxKTbfJ32JXzpkIZYzjWE26naaGdeLAjq9yvl8B/27BbArbb5Htmuetw8Sr8nJscJmbAL8yQGflAFeycMIOIzdhMQgk30dgKpF3MiTN562OD2Wk04QEEsW8ZmM5xcxhNtSne1Is7jmzgSlZrr7MgfzRtFeiPSFl9RE3OjwU4b1JqdA1PKaJrxS9c5sqRkDTBpqjRCgHIsFc45NrkPz9YnUBqmEhJtkr8bvAvW0Msnqu64+kCAWkehEQoHjuytPFJetOmrURFKlWIwUlSSmsZf53xorBvR9Koyazgiv4YB894DwRtWxQygjFKz3x3tq05SJ0GfI6ZfSpvopZKy2gIMr0ZeWOelzd1ENx+ne5QIvyS3KbPI6F9InIpFw+Jy+KGRsYdnQw5U3GNjcSnYNQSVjGvD7f0eR6tdrQu9eG5ZT+NF4NGWDmoZ2B2/bjeXmz86b5S6XjZYCMY5xwxoK7aEXRQ1njwaBOYPWU1YX90voMX6wjBsQA7tBLuQoXhGqduwvuuu6gfKS8JToHRd+FH1Q03TPQN/KM8URrn6IDi9x9+Jw="
+
+    # (!) ENCRYPTED
+    #
+    # Mailgun domain (encrypted)
+    domain: "mB0Rbw4xaMLhLPiP/efZ8tM5kaplBE19DwF/FdM2FK7O5zNGgZtZWgJrOzUwxh3lPKrNeVo0H6up7ime+NC+xpNrr55RussICxZzWHMPC6YvAxiTomArXp8S8qTEwztAScdEDBF7FusyMtzAZhG0oqbUO/7K+oErP54uvZ3kj8ycvVtEGQaoB5Nlc0LSfZMN3LnVRzKrFsBu0blZhoQqoCstb8gKYgyNvGtu3iXkb6iX+xvtNkwu5In5e/Scxew4nTAxpT/dm3FefqQDMVFOQvC/3ejN7DEfF74OWoH5X9R2r3h65Zn6DbkBpMt/I2fPQVvlujFTvFrTH0XhXcrhhTfPqSsDYr5kLFpVsItcLyR+jP6aWdr+d5RJeIaiAtfxmlyt7ixyWwQ4+0+RcTkkg2gb+xfkOf8HdO300RQ82cuf2sx0ANYi3rHiWSRblaeoAs3llD59mkAyDo2nmwBKU8TH66yX/y+wooWIfwsuV0GUW+Uv9uYj5012ZM0QH3421xgky7Q8jWDRiZEcrKr9Wx0yv2gCy6cxNipwSvU9JBSL54Q1WO3NZd0cTrdiNDUxLknPk8KEfzXgs8+Z4+bsrSzN4OULcpbwSkidPM0iVtrphvvi/3f6P+eoh2SDXxjElgpKuqYtPc0/i5r1liiDJpUkk7F5YLrl7BdNcBdTf+U="
