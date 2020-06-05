@@ -1,6 +1,6 @@
 <form class="js-form form" method="post" action="{{ site.staticman_url }}">
-    <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
-    <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
+    <input type="hidden" name="options[origin]" value="{{ page.url | absoluteUrl }}">
+    <input type="hidden" name="options[parent]" value="{{ page.url | absoluteUrl }}">
     <input type="hidden" id="comment-replying-to" name="fields[replying_to]" value="">
     <input type="hidden" id="comment-replying-to-uid" name="fields[replying_to_uid]" value="">
     <input type="hidden" name="options[slug]" value="{{ page.fileSlug }}">
@@ -39,7 +39,7 @@
       Send me an email when someone comments.
     </div>
   </fieldset>
-  
+
     <fieldset>
       <div class="textfield hp">
         <label for="hp">

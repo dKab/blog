@@ -45,6 +45,8 @@ module.exports = function(eleventyConfig) {
     return parseInt(string, 10);
   });
 
+  eleventyConfig.addFilter('absoluteUrl', (url) => `https://kabardinovd.com${url}`);
+
   eleventyConfig.addPassthroughCopy('assets');
   return {
     passthroughFileCopy: true
