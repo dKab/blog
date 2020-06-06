@@ -9,7 +9,10 @@ const CLOUDFLARE_X_AUTH_KEY = parameters.Parameters
 const CLOUDFLARE_ZONE_ID = parameters.Parameters
     .find(param => param.Name === 'CLOUDFLARE_ZONE_ID').Value;
 
-const urls = fs.readFileSync('urls-to-purge.txt', 'utf8').toString().split('\n');
+const urls = fs.readFileSync('urls-to-purge.txt', 'utf8')
+    .toString()
+    .split('\n')
+    .map(line => line.trim());
 const headers = {
     'X-Auth-Email': CLOUDFLARE_X_AUTH_EMAIL,
     'X-Auth-Key': CLOUDFLARE_X_AUTH_KEY,
@@ -25,7 +28,15 @@ if (urls.length === 1 && urls[0] === 'All') {
     body = { purge_everything: true};
     isAll = true;
 } else if (urls.length > 0) {
-    body = {files: urls};
+    body = { files: urls.reduce((acc, curr) => {
+        if (curr === '') {
+            return acc;
+        } 
+        const path = curr === '/' ? '' : curr;
+        acc.push(`https://www.kabardinovd.com${path}`);
+        acc.push(`https://kabardinovd.com${path}`);
+        return acc;
+    }, []) };
 }
 
 axios
