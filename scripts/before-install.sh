@@ -1,4 +1,3 @@
 #!/bin/bash
-cd /home/ubuntu/
-rm -rf website
-mkdir website
+rm -rf /home/ubuntu/deployment
+mkdir -p /home/ubuntu/deployment/website
