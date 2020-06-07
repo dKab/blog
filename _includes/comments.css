@@ -5,7 +5,6 @@ fieldset {
 }
 
 .textfield {
-    width: 420px;
     max-width: 100%;
     padding: 0.5rem 0;
 }
@@ -21,6 +20,11 @@ textarea {
     border: 1px solid rgba(0,0,0,.12);
     padding: 4px 5px;
     width: 100%;
+    box-sizing: border-box;
+    height: 2rem;
+}
+textarea.textfield__input {
+    height: 5rem;
 }
 .notify-me, .g-recaptcha {
     padding: 0.5rem 0;
@@ -36,6 +40,8 @@ textarea {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     margin: 4px 0px 0px 0px;
+    height: 2rem;
+    width: 100%;
 }
 button:hover {
     color: white;
@@ -123,4 +129,40 @@ button:hover {
     filter: alpha(opacity=65);
     box-shadow: none;
     opacity: 0.65;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(359deg);
+    }
+}
+.icon {
+    display: inline-block;
+    fill: currentColor;
+    height: 1em;
+    line-height: 1;
+    position: relative;
+    top: -0.125em;
+    vertical-align: middle;
+    width: 1em;
+}
+.icon.spin {
+    animation: spin 2s infinite linear;
+}
+button:hover {
+    background-color: #757575;
+    color: white;
+}
+
+@media screen and (min-width: 800px) {
+    .button {
+        width: auto;
+    }
+    .textfield {
+        width: 420px;
+    }
 }
