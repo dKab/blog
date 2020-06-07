@@ -66,6 +66,7 @@ button:hover {
 }
 .comment__reply-link {
     cursor: pointer;
+    color: #757575;
 }
 
 .show-modal {
@@ -165,4 +166,16 @@ button:hover {
     .textfield {
         width: 420px;
     }
+}
+
+.arrow {
+    font-weight: 900;
+    background-color: #1a62bf;
+    color: white;
+    padding: 0 2px;
+    border: 2px solid black;
+}
+
+.comment__author {
+    color: #757575;
 }

@@ -9,7 +9,7 @@
         {% if index %}
           <a href="#comment{{ index | prepend: '-' }}" title="Permalink to this comment">
         {% endif %}
-        {{ date | formatTimestampAsDate: "yyyy-MM-dd HH:mm:ss" }}
+        {{ date | formatTimestampAsDate: "dd MMM yyyy" }}
         {% if index %}</a>{% endif %}
       {% endif %}
     </span>
@@ -21,7 +21,7 @@
 
   {% unless replying_to != 0 %}
     <div class="comment__meta">
-      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('comment-{{ index }}', '{{ index }}', 'respond', '{{ page.fileSlug }}', '{{ uid }}')">↪&#xFE0E; Reply to {{ name }}</a>
+      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('comment-{{ index }}', '{{ index }}', 'respond', '{{ page.fileSlug }}', '{{ uid }}')"><span class="arrow">↪</span> Reply to {{ name }}</a>
     </div>
   {% endunless %}
 </article>

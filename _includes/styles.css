@@ -48,6 +48,13 @@ pre {
     margin: auto;
 }
 
-a, a:visited {
+a[href], a[href]:visited {
     color: #0071bc;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
