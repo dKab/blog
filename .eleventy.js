@@ -1,6 +1,18 @@
 const CleanCSS = require("clean-css");
 const format = require('date-fns/format')
 module.exports = function(eleventyConfig) {
+  let markdownIt = require("markdown-it");
+  let markdownItAnchor = require("markdown-it-anchor");
+  let options = {
+    html: true
+  };
+  let markdownLib = markdownIt(options).use(markdownItAnchor, {
+    level: 2,
+    permalink: true
+  });
+  
+  eleventyConfig.setLibrary("md", markdownLib);
+  
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true
   });
