@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <title>{{pageTitle}}</title>
-        <!-- capture the CSS content as a Nunjucks variable -->
+        <!-- capture the CSS content as liquid variable -->
         {% capture css %}
         {% include 'styles.css' %}
         {% endcapture %}
@@ -16,20 +16,39 @@
         {% endif %}
         </style>
     </head>
-    <body>
+    <body class="Site">
+    <header class="Site-header">
         <div class="wrapper">
-            <main>
-                <h1>{{ pageTitle }}</h1>
-                {%- if page.url != '/' -%}
-                     <a href="/">&#8592; Home</a>
-                {%- endif -%}
-                {{ content }}
-            </main>
-            <footer>
+            <a class="title" href="/">Yet another blog</a>
+            <a href="/about/">About</a>
+        </div>
+    </header>
+    <main class="Site-content">
+        <div class="wrapper">
+            <h1>{{ pageTitle }}</h1>
+            {%- if page.url != '/' -%}
+                    <a href="/">&#8592; Home</a>
+            {%- endif -%}
+            {{ content }}
             {% if commentsEnabled == true %}
                 {% include 'comments' %}
             {% endif %}
-            </footer>
         </div>
+    </main>
+    <footer class="Site-footer">
+        <div class="wrapper">
+        <section>
+        <p class="title">
+        Yet another blog
+        </p> 
+        <p class="author">Dmitrii Kabardinov</p></section>
+        <p>
+            <a href="mailto:dkabardinov@gmail.com">dkabardinov@gmail.com</a>
+        </p>
+        <p>
+           <a title="GitHub profile" href="https://github.com/dKab"><img class="icon" aria-hidden="true" src="/assets/graphics/github.svg">dKab</a>
+        </p>
+        </div>
+    </footer>
     </body>
 </html>
