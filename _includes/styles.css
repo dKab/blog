@@ -134,7 +134,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 }
 
 .Site-header a {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 /**
@@ -169,7 +169,7 @@ html {
 }
 
 .Site-footer .title {
-    font-size: 1.43rem;
+    font-size: 1.2rem;
 }
 
 .icon {
