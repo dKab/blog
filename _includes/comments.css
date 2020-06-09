@@ -48,17 +48,17 @@ button:hover {
 }
 
 .comment__new {
-    padding: 0px 0px 14px 0px;
+    padding: 0px 0px 1rem 0px;
 }
 .comment__meta {
     text-align: left;
 }
 .comments__existing {
-    padding: 8px 0px 0px 0px;
+    padding: 0.57rem 0px 0px 0px;
 }
 .comment {
     border-top: 0px solid #ccc;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     margin-bottom: 1em;
 }
 .comment.child {
@@ -114,7 +114,7 @@ button:hover {
 }
 .mdl-card__supporting-text {
     overflow: hidden;
-    padding: 16px;
+    padding: 1.15rem;
     width: 90%;
 }
 .modal-title {

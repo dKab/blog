@@ -9,7 +9,7 @@
         {% if index %}
           <a href="#comment{{ index | prepend: '-' }}" title="Permalink to this comment">
         {% endif %}
-        {{ date | formatTimestampAsDate: "dd MMM yyyy" }}
+        {{ date | formatDate: "dd MMM yyyy" }}
         {% if index %}</a>{% endif %}
       {% endif %}
     </span>

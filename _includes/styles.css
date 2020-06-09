@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 body {
@@ -178,4 +178,17 @@ html {
 
 .Site-footer .icon {
     margin-right: 0.2em;
+}
+.post-date {
+    color: #5b616b
+}
+.posts-list {
+    list-style: none;
+    padding-left: 0;
+}
+.posts-list li {
+    margin: 1.5rem 0;
+}
+.posts-list .post-title {
+    margin: 0.5rem 0;
 }

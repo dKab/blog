@@ -38,9 +38,14 @@ module.exports = function(eleventyConfig) {
     return typeof val;
   });
 
-  eleventyConfig.addFilter('formatTimestampAsDate', function(timestamp, formatString) {
-    const date = new Date();
-    date.setTime(timestamp * 1000);
+  eleventyConfig.addFilter('formatDate', function(dateOrTimestamp, formatString) {
+    let date;
+    if (typeof dateOrTimestamp === 'number') {
+      date = new Date();
+      date.setTime(dateOrTimestamp * 1000);
+    } else {
+      date = dateOrTimestamp;
+    }
     return format(date, formatString);
   })
  
