@@ -102,6 +102,15 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 .Site-footer .wrapper {
     text-align: center;
     padding: 1em 0;
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 400px) {
+    .Site-footer .wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -113,11 +122,6 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     }
     .Site-header .wrapper, .Site-footer .wrapper {
         padding: 1rem 2rem;
-    }
-    .Site-footer .wrapper {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
     }
 }
 
@@ -191,4 +195,8 @@ html {
 }
 .posts-list .post-title {
     margin: 0.5rem 0;
+}
+
+.Site-footer .author {
+    color: #5b616b;
 }
