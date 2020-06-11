@@ -8,11 +8,14 @@
         {% capture css %}
         {% include 'styles.css' %}
         {% endcapture %}
+        {% capture commentsCss %}
+        {% include 'comments.css' %}
+        {% endcapture %}
         <!-- feed it through our cssmin filter to minify -->
         <style>
         {{ css | cssmin | safe }}
         {% if commentsEnabled == true %}
-            {% include 'comments.css' %}
+            {{ commentsCss | cssmin | safe }}
         {% endif %}
         </style>
         <link rel="icon" href="/assets/favicon.ico" sizes="any" type="image/svg+xml">
@@ -27,10 +30,15 @@
     <main class="Site-content">
         <div class="wrapper">
             <h1>{{ pageTitle }}</h1>
-            {%- if page.url != '/' -%}
-                    <a href="/">&#8592; Home</a>
+            {%- if page.url contains "/posts/" -%}
+                <p class="post__date">
+                    {{ page.date | formatDate: "dd MMM yyyy" }}
+                </p>
             {%- endif -%}
             {{ content }}
+            {%- if page.url != '/' -%}
+                    <a class="home-link" href="/">&#8592; Home</a>
+            {%- endif -%}
             {% if commentsEnabled == true %}
                 {% include 'comments' %}
             {% endif %}

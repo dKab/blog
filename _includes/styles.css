@@ -200,3 +200,7 @@ html {
 .Site-footer .author {
     color: #5b616b;
 }
+
+.post__date {
+    color: #5b616b;
+}
