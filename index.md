@@ -10,3 +10,5 @@ pageTitle: Posts
     </li>
 {%- endfor -%}
 </ul>
+
+Subscribe to [RSS feed](/feed.xml)

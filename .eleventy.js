@@ -1,5 +1,6 @@
 const CleanCSS = require("clean-css");
-const format = require('date-fns/format')
+const format = require('date-fns/format');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function(eleventyConfig) {
   let markdownIt = require("markdown-it");
   let markdownItAnchor = require("markdown-it-anchor");
@@ -16,6 +17,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true
   });
+  eleventyConfig.addPlugin(pluginRss);
+
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
   });
