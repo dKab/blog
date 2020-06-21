@@ -1,1 +1,1 @@
-All
+/posts/eleventy-staticman/
