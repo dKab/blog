@@ -1,16 +1,22 @@
 const CleanCSS = require("clean-css");
 const format = require('date-fns/format');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItTOC = require("markdown-it-toc-done-right");
+
 module.exports = function(eleventyConfig) {
-  let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
   let options = {
     html: true
   };
   let markdownLib = markdownIt(options).use(markdownItAnchor, {
     level: 2,
     permalink: true
-  });
+  })
+  .use(markdownItTOC, {level: 2});
+
+  eleventyConfig.addPlugin(syntaxHighlight);
   
   eleventyConfig.setLibrary("md", markdownLib);
   
@@ -50,7 +56,7 @@ module.exports = function(eleventyConfig) {
       date = dateOrTimestamp;
     }
     return format(date, formatString);
-  })
+  });
  
   eleventyConfig.addFilter('sortBy', function(array, key) {
     return array.slice().sort(function(a,b) {
@@ -68,6 +74,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('absoluteUrl', (url) => `https://kabardinovd.com${url}`);
 
   eleventyConfig.addPassthroughCopy('assets');
+  eleventyConfig.addPassthroughCopy('site.webmanifest');
   return {
     passthroughFileCopy: true
   }

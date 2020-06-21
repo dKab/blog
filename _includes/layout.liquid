@@ -11,14 +11,23 @@
         {% capture commentsCss %}
         {% include 'comments.css' %}
         {% endcapture %}
+        {% capture syntaxHighlightCss %}
+        {% include 'prism-a11y-dark.css' %}
+        {% endcapture %}
         <!-- feed it through our cssmin filter to minify -->
         <style>
         {{ css | cssmin | safe }}
         {% if commentsEnabled == true %}
             {{ commentsCss | cssmin | safe }}
         {% endif %}
+        {% if syntaxHighlightEnabled == true %}
+            {{ syntaxHighlightCss | cssmin | safe }}
+        {% endif %}
         </style>
-        <link rel="icon" href="/assets/favicon.ico" sizes="any" type="image/svg+xml">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
     <body class="Site">
     <header class="Site-header">
@@ -53,6 +62,11 @@
         <p class="author">Dmitrii Kabardinov</p></section>
         <p>
             <a href="mailto:dkabardinov@gmail.com">dkabardinov@gmail.com</a>
+        </p>
+        <p class="twitter profile">
+            <a href="https://twitter.com/dkabardinov">
+                <img class="icon" src="/assets/graphics/twitter.svg" aria-hidden="true" />dkabardinov
+            </a>
         </p>
         <p>
            <a title="GitHub profile" href="https://github.com/dKab"><img class="icon" aria-hidden="true" src="/assets/graphics/github.svg">dKab</a>

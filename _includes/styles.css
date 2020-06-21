@@ -204,3 +204,7 @@ html {
 .post__date {
     color: #5b616b;
 }
+
+pre {
+    font-size: inherit;
+}
