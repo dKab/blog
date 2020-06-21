@@ -105,7 +105,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     font-size: 0.9rem;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 500px) {
     .Site-footer .wrapper {
         display: flex;
         justify-content: space-between;
@@ -123,6 +123,9 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     .Site-header .wrapper, .Site-footer .wrapper {
         padding: 1rem 2rem;
     }
+    pre {
+        font-size: inherit;
+    }    
 }
 
 .Site-header .wrapper a {
@@ -205,6 +208,14 @@ html {
     color: #5b616b;
 }
 
-pre {
-    font-size: inherit;
+.wrapper img {
+    max-width: 100%;
+}
+figure {
+    text-align: center;
+}
+
+figure .image-caption {
+    font-size: 0.8em;
+    color: #5b616b;
 }
