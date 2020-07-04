@@ -75,5 +75,8 @@
         </section>
         </div>
     </footer>
+    {% if commentsEnabled == true %}
+        {% include 'comment-result-modal' %}
+    {% endif %}
     </body>
 </html>

@@ -1,54 +1,106 @@
-// Static comments
-// from: https://github.com/eduardoboucas/popcorn/blob/gh-pages/js/main.js
-(function ($) {
-    var $comments = $('.js-comments');
-  
-    $('.js-form').submit(function () {
-      var form = this;
-  
-  
-      $("#comment-form-submit").html(
-        '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...'
-      );
-      $(form).addClass('disabled');
-  
-      $.ajax({
-        type: $(this).attr('method'),
-        url:  $(this).attr('action'),
-        data: $(this).serialize(),
-        contentType: 'application/x-www-form-urlencoded',
-        success: function (data) {
-          showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/dKab/blog/pulls">pending</a>. It will appear when approved.');
-  
-          $("#comment-form-submit")
-            .html("Submit");
-  
-          $(form)[0].reset();
-          $(form).removeClass('disabled');
-          grecaptcha.reset();
-        },
-        error: function (err) {
-          console.log(err);
-          var ecode = (err.responseJSON || {}).errorCode || "unknown";
-          showModal('Error', 'An error occured.<br>[' + ecode + ']');
-          $("#comment-form-submit").html("Submit")
-          $(form).removeClass('disabled');
-          grecaptcha.reset();
+var form = document.querySelector('.js-form');
+form.addEventListener('submit', function(e) {
+    var button = document.querySelector('#comment-form-submit');
+    button.innerHTML = '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...';
+    button.setAttribute('disabled', true);
+    form.classList.add('disabled'); // don't forget to add polyfill for old IE
+    var xhr = new XMLHttpRequest();
+    var method = form.getAttribute('method');
+    var url = form.getAttribute('action');
+
+    xhr.open(method, url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            var status = xhr.status;
+            if (status === 0 || (200 <= status && status < 400)) {
+                MicroModal.show('modal-success');
+            } else {
+                var unknownError = '¯\_(ツ)_/¯';
+                var errorMessage;
+                try {
+                  var response = JSON.parse(xhr.response);
+                  errorMessage = response.message || response.errorCode || unknownError;
+                } catch (e) {
+                  errorMessage = unknownError;
+                }
+                document.getElementById('comment-error-code').innerHTML = errorMessage;
+                MicroModal.show('modal-error');
+            }
+            form.classList.remove('disabled');
+            form.reset();
+            button.removeAttribute('disabled');
+            button.innerHTML = 'Submit';
+            grecaptcha.reset();
         }
-      });
-      return false;
-    });
-  
-    $('.js-close-modal').click(function () {
-      $('body').removeClass('show-modal');
-    });
-  
-    function showModal(title, message) {
-      $('.js-modal-title').text(title);
-      $('.js-modal-text').html(message);
-      $('body').addClass('show-modal');
-    }
-  })(jQuery);
+    };
+
+    xhr.send(serialize(form));
+    event.preventDefault();
+});
+
+
+function serialize(form) {
+	if (!form || form.nodeName !== "FORM") {
+		return;
+	}
+	var i, j, q = [];
+	for (i = form.elements.length - 1; i >= 0; i = i - 1) {
+		if (form.elements[i].name === "") {
+			continue;
+		}
+		switch (form.elements[i].nodeName) {
+		case 'INPUT':
+			switch (form.elements[i].type) {
+			case 'text':
+			case 'hidden':
+			case 'password':
+			case 'button':
+			case 'reset':
+			case 'email':
+			case 'submit':
+				q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+				break;
+			case 'checkbox':
+			case 'radio':
+				if (form.elements[i].checked) {
+					q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+				}						
+				break;
+			case 'file':
+				break;
+			}
+			break;			 
+		case 'TEXTAREA':
+			q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+			break;
+		case 'SELECT':
+			switch (form.elements[i].type) {
+			case 'select-one':
+				q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+				break;
+			case 'select-multiple':
+				for (j = form.elements[i].options.length - 1; j >= 0; j = j - 1) {
+					if (form.elements[i].options[j].selected) {
+						q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].options[j].value));
+					}
+				}
+				break;
+			}
+			break;
+		case 'BUTTON':
+			switch (form.elements[i].type) {
+			case 'reset':
+			case 'submit':
+			case 'button':
+				q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+				break;
+			}
+			break;
+		}
+	}
+	return q.join("&");
+}
   
   // Staticman comment replies, from https://github.com/mmistakes/made-mistakes-jekyll
   // modified from Wordpress https://core.svn.wordpress.org/trunk/wp-includes/js/comment-reply.js
@@ -59,10 +111,10 @@
     // parentId - the numeric index of comment repleid to (e.g., 10)
     // respondId - the string 'respond', I guess
     // postId - the page slug
-    moveForm: function( commId, parentId, respondId, postId, parentUid ) {
+    moveForm: function( commentId, parentId, respondId, postId, parentUid ) {
       var div, element, style, cssHidden,
       t           = this,                    //t is the addComment object, with functions moveForm and I, and variable respondId
-      comm        = t.I( commId ),                                // whole comment
+      comm        = t.I( commentId ),                                // whole comment
       respond     = t.I( respondId ),                             // whole new comment form
       cancel      = t.I( 'cancel-comment-reply-link' ),           // whole reply cancel link
       parent      = t.I( 'comment-replying-to' ),                 // hidden element in the comment
@@ -125,7 +177,7 @@
             style = window.getComputedStyle( element );
           // IE 8.
           } else if ( document.documentElement.currentStyle ) {
-          style = element.currentStyle;
+            style = element.currentStyle;
           }
   
         /*
