@@ -1,2 +1,1 @@
-/posts/eleventy-staticman/
-/posts/first-post/
+/assets/main.js
