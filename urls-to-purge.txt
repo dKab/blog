@@ -1,1 +1,2 @@
 /posts/eleventy-staticman/
+/posts/first-post/
