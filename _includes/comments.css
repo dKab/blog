@@ -64,6 +64,12 @@ textarea.textfield__input {
 .comment__reply-link {
     cursor: pointer;
     color: #757575;
+    border: none;
+    background: transparent;
+    font-size: 1em;
+}
+.comment__reply-link:hover .comment-reply-button__text {
+  text-decoration: underline;
 }
 
 .mdl-card {
