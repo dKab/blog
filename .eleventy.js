@@ -47,6 +47,10 @@ module.exports = function(eleventyConfig) {
     return typeof val;
   });
 
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return format(dateObj, 'yyyy-MM-dd');
+  });
+
   eleventyConfig.addFilter('formatDate', function(dateOrTimestamp, formatString) {
     let date;
     if (typeof dateOrTimestamp === 'number') {
@@ -75,6 +79,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('site.webmanifest');
+  eleventyConfig.addPassthroughCopy('robots.txt');
   return {
     passthroughFileCopy: true
   }

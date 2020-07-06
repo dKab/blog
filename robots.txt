@@ -1,0 +1,4 @@
+Sitemap: https://kabardinovd.com/sitemap.xml
+
+User-agent: *
+Disallow:

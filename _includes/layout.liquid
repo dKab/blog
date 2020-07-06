@@ -44,9 +44,13 @@
                     {{ page.date | formatDate: "dd MMM yyyy" }}
                 </p>
             {%- endif -%}
-            {{ content }}
+            <article>
+                {{ content }}
+            </article>
             {%- if page.url != '/' -%}
-                    <a class="home-link" href="/">&#8592; Home</a>
+                    <nav>
+                        <a class="home-link" href="/">&#8592; Home</a>
+                    </nav>
             {%- endif -%}
             {% if commentsEnabled == true %}
                 {% include 'comments' %}
