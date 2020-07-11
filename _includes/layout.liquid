@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <title>{{pageTitle}}</title>
+        {% if SEO_Description %}
+        <meta name="description" content="{{ SEO_Description }}">
+        {% endif %}
         <!-- capture the CSS content as liquid variable -->
         {% capture css %}
         {% include 'styles.css' %}

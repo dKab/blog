@@ -2,6 +2,7 @@
 date: 2020-06-21
 pageTitle: Building a static blog with Eleventy and Staticman 
 syntaxHighlightEnabled: true
+SEO_Description: This article describes my experience integrating 11ty-based static blog with Staticman — an opensource tool for adding user-generated content (e.g. comments) to static sites.
 ---
 
 ${toc}
@@ -13,7 +14,7 @@ But, first, what exactly is a static site?
 ### Why static site
 
 Most of the websites that provide a personalized experience (that you can log in to), are **dynamic** websites, meaning, they rely on some dynamic data and are rendered either on the server or in the browser on the fly when a page is requested. Upon receiving a request backend would query some database or API to retrieve the data needed to render the requested HTML page.
-Whereas a **static** site is just a set of HTML pages, pre-rendered in advance. When the request comes to the server, we don't have to do anything other than just send the requested HTML file in response. As you can imagine, it saves a lot of time, that would be otherwise spent on querying the database or API and generating result HTML, therefore, in terms of performance, nothing beats pre-rendered static web-pages. But if that wasn't enough, static sites open a unique opportunity to reduce waiting time for users even more. I'm talking about CDN or Content Delivery Network. Dynamic sites can use CDN to speed up delivery of their static resources — images, fonts, stylesheets, and javascript but that's all that CDN can do for a dynamic site. With static sites, however, you can go further and cache the HTML pages as well. That's what I'm doing for this blog and I'm going to talk about it more in one of the future posts. 
+Whereas a **static** site is just a set of HTML pages, pre-rendered in advance. When the request comes to the server, we don't have to do anything other than just send the requested HTML file in response. As you can imagine, it saves a lot of time, that would be otherwise spent on querying the database or API and generating result HTML, therefore, in terms of performance, nothing beats pre-rendered static web-pages. But if that wasn't enough, static sites open a unique opportunity to reduce waiting time for users even more. I'm talking about CDN or Content Delivery Network. Dynamic sites can use CDN to speed up delivery of their static resources: images, fonts, stylesheets, and javascript, but that's all CDN can do for a dynamic site. With static sites, however, you can go further and cache the HTML pages as well. That's what I'm doing for this blog and I'm going to talk about it more in one of the future posts. 
 
 But the simplicity of static sites have other advantages besides performance. The fact that the whole thing is just files stored in Git makes the installation process a lot easier and offers additional flexibility with hosting providers — you don't depend on any particular database or programming language and in fact, it's possible to host static site even on Amazon S3 (a Simple Storage Service) or GitHub pages, which many people do.
 
