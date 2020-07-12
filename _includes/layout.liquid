@@ -7,9 +7,6 @@
         {% if SEO_Description %}
         <meta name="description" content="{{ SEO_Description }}">
         {% endif %}
-        {% if commentsEnabled == true  %}
-        <link rel="preconnect" href="https://www.gstatic.com">
-        {% endif %}
         <!-- capture the CSS content as liquid variable -->
         {% capture css %}
         {% include 'styles.css' %}
