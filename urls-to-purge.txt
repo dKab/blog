@@ -1,1 +1,3 @@
-/
+/posts/eleventy-staticman/
+/posts/first-post/
+/posts/jquery/
