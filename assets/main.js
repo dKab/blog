@@ -101,11 +101,19 @@ function serialize(form) {
 	}
 	return q.join("&");
 }
+ 
+  document.querySelectorAll('.comment__reply-link').forEach(function(replyButton) {
+    replyButton.addEventListener('click', function(e) {
+      var button = e.currentTarget;
+      var commentId = button.dataset.commentId;
+      var parentId = button.dataset.parentId;
+      var respondId = button.dataset.respondId;
+      var postId = button.dataset.postId;
+      var parentUid = button.dataset.parentUid;
+      addComment.moveForm(commentId, parentId, respondId, postId, parentUid);
+    }, {passive: true});
+  });
   
-  // Staticman comment replies, from https://github.com/mmistakes/made-mistakes-jekyll
-  // modified from Wordpress https://core.svn.wordpress.org/trunk/wp-includes/js/comment-reply.js
-  // Released under the GNU General Public License - https://wordpress.org/about/gpl/
-  // addComment.moveForm is called from comment.html when the reply link is clicked.
   var addComment = {
     // commId - the id attribute of the comment replied to (e.g., "comment-10")
     // parentId - the numeric index of comment repleid to (e.g., 10)
