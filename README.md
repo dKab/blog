@@ -11,3 +11,5 @@ Urls should not include protocol, nor domain, nor www subdamain, an example:
 - Leave the file empty if no purging is required
   
 - Write single line ```All``` to purge everything (hardly ever needed) 
+
+- Write ```All posts``` on a separate line to purge all post pages 

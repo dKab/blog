@@ -31,10 +31,14 @@ if (urls.length === 1 && urls[0] === 'All') {
     body = { files: urls.reduce((acc, curr) => {
         if (curr === '') {
             return acc;
-        } 
-        const path = curr === '/' ? '' : curr;
-        acc.push(`https://www.kabardinovd.com${path}`);
-        acc.push(`https://kabardinovd.com${path}`);
+        } else if (curr.toLowerCase() === 'all posts') {
+            const allPosts = getPostsURLs();
+            acc.push(...allPosts);
+        } else {
+            const path = curr === '/' ? '' : curr;
+            acc.push(`https://www.kabardinovd.com${path}`);
+            acc.push(`https://kabardinovd.com${path}`);
+        }
         return acc;
     }, []) };
 }
@@ -52,4 +56,18 @@ axios
         error: ${JSON.stringify(error)}
         `);
     })
+
+function getPostsURLs() {
+    const files = fs.readdirSync('posts');
+    urls = files
+        .filter((fileNameWithExt) => 
+            fileNameWithExt.split('.').pop()
+            .toLowerCase() !== 'json')
+        .flatMap(fileNameWithExt => {
+            const withoutExt = fileNameWithExt
+                .split('.').slice(0, -1).join('.');
+            return [`https://kabardinovd.com/posts/${withoutExt}/`,
+             `https://www.kabardinovd.com/posts/${withoutExt}/`]
+        });
+}
 
