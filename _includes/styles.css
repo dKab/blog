@@ -249,3 +249,7 @@ figure .image-caption {
     font-size: 0.8em;
     color: #5b616b;
 }
+
+p > code {
+    word-break: break-all;
+}
