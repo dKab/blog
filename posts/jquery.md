@@ -17,13 +17,13 @@ It's a problem for two reasons:
 1. Performance
 2. Network traffic
 
-JavaScript is the most expensive resource in the Web because it has to be parsed, compiled, and executed after it has been downloaded. While the browser is busy loading and executing the script, it pauses parsing page HTML, which increases the time user has to wait for the page to load. Modern computers on broadband connection can do all this in the blink of an eye; however, the processing time can be longer for low-end devices on a poor-quality mobile network. Not everybody surfs the web using a powerful desktop or the latest iPhone. Something had to be done. As a temporary solution, I've added `defer="true"` attribute to the script tag. It tells the browser that the script is not critical for initial page rendering and can be loaded and evaluated after the browser has finished parsing the page. With this small change, the performance problem was solved, and I could leave it like that if it wasn't for the second concern — traffic.
+JavaScript is the most expensive resource in the Web because it has to be parsed, compiled, and executed after it has been downloaded. While the browser is busy loading and executing the script, it pauses parsing page's HTML, which increases the time user has to wait for the page to load. Modern computers on broadband connection can do all this in the blink of an eye; however, the processing time can be longer for low-end devices on a poor-quality mobile network. Not everybody surfs the web using a powerful desktop or the latest iPhone. Something had to be done. As a temporary solution, I've added `defer="true"` attribute to the script tag. It tells the browser that the script is not critical for initial page rendering and can be loaded and evaluated after the browser has finished parsing the page. With this small change, the performance problem was solved, and I could leave it like that if it wasn't for the second concern — traffic.
 
 Downloading 83 Kb (though in reality, the size of transferred data is less than 83kb if it's gzipped) is not a problem for those on unlimited plans. But a lot of people still have some monthly limit on their Internet traffic on smartphones and this limit isn't even that high. And even if you don't have to worry how much data you download in your home country, it all changes the moment you go abroad and roaming kicks in. Usually, in this case, your mobile network operator will switch you on some postpaid plan that charges you for every megabyte of traffic. That's why it's not a concern we can dismiss easily. If websites keep sending unnecessary scripts down the pipe these kilobytes can add up quickly. Developers have to be mindful of what we are sending and make sure to send only what's necessary. It can save money!
 
 In my script jQuery was used for a couple of things:
 
- - DOM elements selection and simple DOM manipulations in the part of the code responsible for showing modal window: 
+ - DOM elements selection and simple DOM manipulations in the part of the code responsible for showing modal window
  - Form serialization and ajax request
 
 ### Modal window rework
