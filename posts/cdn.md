@@ -40,8 +40,8 @@ When I push the changes CI server will call `purge-cdn-cache.js` as the last ste
 
 Here's what contents of `urls-to-purge.txt` could look like if, for example, I made a change to my "About" page and one of my posts:
 
-/about/
-/posts/first-post/
+    /about/
+    /posts/first-post/
 
 Then `purge-cdn-cache.js` script would transform it to 
 
