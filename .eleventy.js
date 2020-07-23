@@ -75,6 +75,30 @@ module.exports = function(eleventyConfig) {
     return parseInt(string, 10);
   });
 
+  eleventyConfig.addShortcode('getPreviousPost', (postUrl, posts) => {
+    const index = posts.findIndex(post => post.url == postUrl);
+    if (0 < index) {
+      const post = posts[index - 1];
+      return `
+        <p>Previous: <a href="${post.url}">${post.data.pageTitle}</a></p>
+      `;
+    } else {
+      return '';
+    }
+  });
+
+  eleventyConfig.addShortcode('getNextPost', (postUrl, posts) => {
+    const index = posts.findIndex(post => post.url == postUrl);
+    if ( 0 <= index && index < posts.length - 1 ) {
+      const post = posts[index + 1];
+      return `
+      <p>Next: <a href="${post.url}">${post.data.pageTitle}</a></p>
+      `;
+    } else {
+      return '';
+    }
+  });
+
   eleventyConfig.addFilter('absoluteUrl', (url) => `https://kabardinovd.com${url}`);
 
   eleventyConfig.addPassthroughCopy('assets');

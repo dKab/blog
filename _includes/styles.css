@@ -155,7 +155,11 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     }
     pre {
         font-size: inherit;
-    }    
+    }
+    .posts {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .Site-header .wrapper a {

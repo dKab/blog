@@ -56,6 +56,12 @@
             {%- if page.url != '/' -%}
                     <nav>
                         <a class="home-link" href="/">&#8592; Home</a>
+                        {%- if page.url contains "/posts/" -%}
+                          <div class="posts">
+                            {% getPreviousPost page.url collections.posts %}
+                            {% getNextPost page.url collections.posts %}
+                          </div>
+                        {% endif %}
                     </nav>
             {%- endif -%}
             {% if commentsEnabled == true %}
