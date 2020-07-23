@@ -7,7 +7,6 @@ SEO_Description: This post describes a simple way to purge CDN cache when a page
 
 ${toc}
 
-
 ## The problem of CDN cache purging
 
 I use [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) to improve page load times by caching all static assets on CDN servers. [Cloudflare CDN](https://www.cloudflare.com/cdn/) that I've chosen for this blog has a free plan, which is more than enough for a simple site like this one. And since my site is static I can cache pretty much everything from images to javascript to HTML. This is the beauty of static sites.
@@ -55,6 +54,9 @@ and send the request to Cloudflare API.
 And this is what's inside my `purge-cdn-cache.js`:
 
 ``` js
+const axios = require('axios');
+const fs = require('fs');
+
 const urls = fs.readFileSync('urls-to-purge.txt', 'utf8')
     .toString()
     .split('\n')
