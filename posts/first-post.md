@@ -1,6 +1,7 @@
 ---
 date: 2020-06-12
 pageTitle: First post ✨
+SEO_Description: I've built a blog, and I'm going to write about HTML, CSS and Javascript. Stay tuned!
 ---
 
 Hello!

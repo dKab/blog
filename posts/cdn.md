@@ -86,7 +86,11 @@ if (urls.length === 1 && urls[0] === 'All') {
     }, []) };
 }
 axios // axios is just a utility for making http requests
-.post(`https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache`, body, {headers})
+.post(
+    `https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache`,
+    body,
+    {headers}
+)
 .then(() => {
     fs.writeFileSync('deploy-logs.txt', `
     purged cache for the following urls:
@@ -130,9 +134,12 @@ async function validateChanges() {
         return
     }
 
-    const URLsFile = diffSummary.files.find(f => Object.is(f.file, 'urls-to-purge.txt'))
+    const URLsFile = diffSummary.files.find(
+            f => Object.is(f.file, 'urls-to-purge.txt')
+        )
     if (URLsFile === undefined) {
-        error = 'The urls-to-purge.txt is not staged. Did you forget to update it?'
+        error = `The urls-to-purge.txt is not staged.
+        Did you forget to update it?`
         return
     }
 }
