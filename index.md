@@ -1,6 +1,7 @@
 ---
 layout: layout.liquid
 pageTitle: Posts
+SEO_Description: A blog about web-development and everything related. 
 ---
 <ul class="posts-list">
 {%- for post in collections.posts reversed -%}
