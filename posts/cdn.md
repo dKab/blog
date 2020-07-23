@@ -8,7 +8,7 @@ SEO_Description: This post describes a simple way to purge CDN cache when a page
 ${toc}
 
 
-### The problem of CDN cache purging
+## The problem of CDN cache purging
 
 I use [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) to improve page load times by caching all static assets on CDN servers. [Cloudflare CDN](https://www.cloudflare.com/cdn/) that I've chosen for this blog has a free plan, which is more than enough for a simple site like this one. And since my site is static I can cache pretty much everything from images to javascript to HTML. This is the beauty of static sites.
 
@@ -28,7 +28,7 @@ Using API is much more convenient because it enables automation. Instead of writ
 
 But I still have to specify these URLs, which is not ideal. I would like to not worry about it at all and have a mechanism that could understand which URLs have to be purged by looking at what files have been changed in the new revision. I thought about it a little and concluded that even if it was possible it would probably be very time-consuming to make it work reliably. I'd need to maintain some kind of a file-to-URL map with some logic on top of it because the relation is not that simple. For example, if I change a post, I can't tell if I have to purge the URL for the post's page only or the home page URL has to be purged as well. It depends on what exactly I have changed in the file — if the title was changed, then the home page needs to be updated. 
 
-### The solution
+## The solution
 With this in mind, I decided to not overengineer things and settled for a simpler solution, which didn't require a lot of work. It consists of two parts:
 
 1. `urls-to-purge.txt` file in the root of the project
@@ -112,7 +112,7 @@ function getPostsURLs() {
 }
 ```
 
-### Git hook as a safety net
+## Git hook as a safety net
 
 The only problem with this solution is that I can forget to update `urls-to-purge.txt` when I change something. And it happened to me several times. But not anymore. I just had to add pre-commit git hook that would check if `urls-to-purge.txt` is staged and block the commit if it's not. I used [husky](https://github.com/typicode/husky) to write the hook in JavaScript. To get the list of staged files from Node.js I used a handy library called [simple-git](https://github.com/steveukx/git-js). Here's the script that gets called by `husky` and runs the check:
 

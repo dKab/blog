@@ -6,7 +6,7 @@ pageTitle: Posts
 {%- for post in collections.posts reversed -%}
     <li>
         <span class="post-date">{{ post.date | formatDate: "dd MMM yyyy" }}</span>
-        <h3 class="post-title"><a href="{{ post.url }}">{{ post.data.pageTitle }}</a></h3>
+        <h2 class="post-title"><a href="{{ post.url }}">{{ post.data.pageTitle }}</a></h2>
     </li>
 {%- endfor -%}
 </ul>

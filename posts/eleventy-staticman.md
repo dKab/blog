@@ -11,7 +11,7 @@ Hi, today I wanted to talk about static sites since this site is static. I'll te
 
 But, first, what exactly is a static site?
 
-### Why static site
+## Why static site
 
 Most of the websites that provide a personalized experience (that you can log in to), are **dynamic** websites, meaning, they rely on some dynamic data and are rendered either on the server or in the browser on the fly when a page is requested. Upon receiving a request backend would query some database or API to retrieve the data needed to render the requested HTML page.
 Whereas a **static** site is just a set of HTML pages, pre-rendered in advance. When the request comes to the server, we don't have to do anything other than just send the requested HTML file in response. As you can imagine, it saves a lot of time, that would be otherwise spent on querying the database or API and generating result HTML, therefore, in terms of performance, nothing beats pre-rendered static web-pages. But if that wasn't enough, static sites open a unique opportunity to reduce waiting time for users even more. I'm talking about CDN or Content Delivery Network. Dynamic sites can use CDN to speed up delivery of their static resources: images, fonts, stylesheets, and javascript, but that's all CDN can do for a dynamic site. With static sites, however, you can go further and cache the HTML pages as well. That's what I'm doing for this blog and I'm going to talk about it more in one of the future posts. 
@@ -20,7 +20,7 @@ But the simplicity of static sites have other advantages besides performance. Th
 
 Of course, the area of application of static sites is fairly limited, but for many common purposes such as blogs, documentation sites, promotional landing pages, or personal pages static site is probably the best choice.
 
-### 11ty
+## 11ty
 
 Static sites don't require any special tool to build them because all they are is just a good old HTML, CSS, and maybe some JavaScript, and of course a developer can write everything by hand if they want. However, a static site generator or SSG can make life much easier, because it can do a lot of work for you. Most of SSGs support some template engines like liquid, nunjucks, twig, handlebars, etc., which are kind of special languages that you can use to inject data into your pages. What SSGs do is they take templates written in one of these languages and translate them into HTML pages, ready to be served to the client. For blogging, what comes especially handy is the possibility to write posts in markdown and have them transpiled to HTML.
 
@@ -28,7 +28,7 @@ You can do all sorts of things during build time, you can even use dynamic(ish) 
 
 I haven't used any static site generator before, even though they've been around for a while now. So I've started looking and, apparently [there's no shortage of options](https://github.com/myles/awesome-static-generators) when it comes to choosing an SSG. For blogs in particular, however, there's one tool that stands out in terms of popularity and it's [Jekyll](https://jekyllrb.com/). It was one of the first SSGs to appear and it remains very relevant even now, after many years and with so many competitors. And I seriously considered using Jekyll for this blog, because as with any popular technology, it's easy to find help, it has a mature ecosystem, a lot of plugins, many tutorials. For me, however, there's one deterrent for using Jekyll and it's the fact that it's written in Ruby, and don't get me wrong, I don't have anything against Ruby, it's just I'm not as comfortable with it as I am with Node.js. The idea of having to install ruby both on my machine and on the server, to deal with its gems and all that was not a very cheerful perspective. So naturally, before settling down with Jekyll, I decided to look some more for something similar but written in Nodejs. And sure enough, I found it — [11ty](https://www.11ty.dev/). I've picked it and haven't regretted it once so far. It's pretty intuitive — I've been able to set up a basic blog skeleton in about 20 minutes or so, that's not bad taking into account the fact that I am completely new to SSGs.
 
-### Staticman for comments
+## Staticman for comments
 
 Commenting is a tricky subject in the context of static web sites because to have comments, typically you need a database and some backend since you have to somehow  handle form submission event and store the comment. But static sites don't bother themselves with backend logic and databases, so, too bad, right? Well, there's an alternative, we can use 3rd party things like Disqus. Disqus provides a javascript that you include on your page. This script constructs a section with comments and attaches it to your page, as well as handles comment form submission, saving the comments on their servers. However, using Disqus is probably [not such a good idea](https://fatfrogmedia.com/delete-disqus-comments-wordpress/). First of all, Disqus is not free, unless of course, you want to show ads to your users. Second, you don't control the visual design of the comments section. So, there's plenty of reasons not to use Disqus, but hey, what are we left with? Meet, [Staticman](https://staticman.net/)!
 I can't explain what it is better than their GitHub page does, so I'll just cite it here:
@@ -95,7 +95,7 @@ There's one more thing that I want to do concerning comments and that's to get r
 
 Hope you enjoyed reading this, comments and feedback are welcome. Stay safe and see you later.
 
-### Credits & References
+## Credits & References
 
 - Thanks to Travis Downs for such a [comprehensive guide](https://travisdowns.github.io/blog/2020/02/05/now-with-comments.html), covering integration of Staticman into a Jekyll site. 
 - A great [article](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) on how to move from Jekyll to Eleventy, written by Paul Lloyd.

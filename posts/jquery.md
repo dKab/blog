@@ -7,7 +7,7 @@ SEO_Description: In this post, I describe how I got rid of jQuery dependency in 
 
 ${toc}
 
-### The problem
+## The problem
 
 As I've mentioned in the [previous post](/posts/eleventy-staticman/#staticman-for-comments), I brought over the code for my comments section from another website. Even though I was spared having to write everything from scratch myself, porting Jekyll templates to my eleventy blog turned out to be more time-consuming than I expected. So, by the time I was done with it I was eager to finally deploy my blog and call it a night. I didn't have the energy to polish everything, even though there were a few things I didn't like in the code. The main issue was that the code was using jQuery. 
 
@@ -26,7 +26,7 @@ In my script jQuery was used for a couple of things:
  - DOM elements selection and simple DOM manipulations in the part of the code responsible for showing modal window
  - Form serialization and ajax request
 
-### Modal window rework
+## Modal window rework
 So this is the old implementation in a nutshell:
 
 ``` js
@@ -61,7 +61,7 @@ Micromodal](https://github.com/ghosh/micromodal) to make my modals awesome. The 
 
 But aside from looking good, most importantly it's fully accessible: you can tab through the controls, and focus won't leave the modal. You can close the modal by pressing Esc, and it uses all the right WAI-ARIA attributes to assist screen readers.
 
-### Ajax and form serialization
+## Ajax and form serialization
 
 The last thing I had to do was to replace `$.ajax` with something. I had a few options here including new promise-based `fetch` API, which is supposed to replace `XMLHttpRequest` in modern browsers. However it doesn't work even in IE 11, so I decided to use less fancy but more widely supported `XMLHttpRequest`. So, what looked before like this:
 
