@@ -9,7 +9,7 @@ ${toc}
 
 ## The problem of CDN cache purging
 
-I use [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) to improve page load times by caching all static assets on CDN servers. [Cloudflare CDN](https://www.cloudflare.com/cdn/) that I've chosen for this blog has a free plan, which is more than enough for a simple site like this one. And since my site is static I can cache pretty much everything from images to javascript to HTML. This is the beauty of static sites.
+I use [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) to improve page load times by caching all static assets on CDN servers. [Cloudflare CDN](https://www.cloudflare.com/cdn/) that I've chosen for this blog has a free plan, which is more than enough for my needs. And since my site is static I can cache pretty much everything from images to javascript to HTML. This is the beauty of static sites.
 
 Caching is great but you can burn yourself if you are not careful and forget to invalidate or "purge" cache when a cached resource changes. In this case, the user will see an outdated version of the resource. Ouch!
 
