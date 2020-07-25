@@ -6,6 +6,7 @@
         <title>{{pageTitle}}</title>
         {% if SEO_Description %}
         <meta name="description" content="{{ SEO_Description }}">
+        <script src="/assets/theme-switch.js"></script> 
         {% endif %}
         {% if commentsEnabled == true  %}
         <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -39,6 +40,11 @@
     <header class="Site-header">
         <div class="wrapper">
             <a class="title" href="/">Yet another blog</a>
+            <label class="switch" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <span aria-hidden="true" class="left">🌞</span><span aria-hidden="true" class="right">🌜</span>
+                <input id="theme-switcher" type="checkbox">
+                <span class="slider round" aria-hidden></span>
+            </label>
             <a href="/about/">About</a>
         </div>
     </header>
@@ -87,7 +93,7 @@
                 </a>
             </p>
             <p class="github-link">
-               <a title="GitHub profile" href="https://github.com/dKab"><img class="icon" aria-hidden="true" src="/assets/graphics/github.svg">dKab</a>
+               <a title="GitHub profile" href="https://github.com/dKab"><i class="icon github-icon" aria-hidden="true"></i>dKab</a>
             </p>
         </section>
         </div>

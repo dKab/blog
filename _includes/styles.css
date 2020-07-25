@@ -1,3 +1,7 @@
+:root {
+    color-scheme: light dark; /* both supported */
+}
+
 html {
     font-size: 16px;
 }
@@ -51,14 +55,6 @@ pre {
 .wrapper {
     max-width: 800px;
     margin: auto;
-}
-
-a[href] {
-    color: #0071bc;
-}
-
-a[href]:visited {
-    color: #205493;
 }
 
 a {
@@ -162,16 +158,8 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     }
 }
 
-.Site-header .wrapper a {
-    color: #494440;
-}
-
 .Site-header .title {
     font-size: 1.6rem;
-}
-
-.Site-header .wrapper a {
-    color: #494440;
 }
 
 .Site-header a {
@@ -220,9 +208,6 @@ html {
 .Site-footer .icon {
     margin-right: 0.2em;
 }
-.post-date {
-    color: #5b616b
-}
 .posts-list {
     list-style: none;
     padding-left: 0;
@@ -234,14 +219,6 @@ html {
     margin: 0.5rem 0;
 }
 
-.Site-footer .author {
-    color: #5b616b;
-}
-
-.post__date {
-    color: #5b616b;
-}
-
 .wrapper img {
     max-width: 100%;
 }
@@ -249,11 +226,174 @@ figure {
     text-align: center;
 }
 
-figure .image-caption {
-    font-size: 0.8em;
-    color: #5b616b;
-}
-
 p > code {
     word-break: break-all;
 }
+figure .image-caption {
+    font-size: 0.8em;
+}
+.modal__btn.btn-primary, .btn-primary {
+    color: #fff;
+}
+
+body {
+    --text-color: #000;
+    --bkg-color: #fff;
+    --link-color: #0071bc;
+    --visited-link-color: #205493;
+    --header-link-color: #494440;
+    --gray-text-color: #5b616b;
+    --btn-color: #00449e;
+    --name-gray-color: #5b616b;
+    --reply-link-color: #757575;
+    --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+  }
+  html.dark-theme body {
+    --text-color: #E7E8EB;
+    --bkg-color: #212121;
+    --link-color: rgb(75, 179, 255);
+    --visited-link-color: rgb(94, 187, 255);
+    --header-link-color: #aab3b6;
+    --gray-text-color: #a6acb6;
+    --btn-color: #2885FF;
+    --name-gray-color: #a4aab3;
+    --reply-link-color: #ababab;
+    --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: #E7E8EB;
+        --bkg-color: #212121;
+        --link-color: rgb(75, 179, 255);
+        --visited-link-color: rgb(94, 187, 255);
+        --header-link-color: #aab3b6;
+        --gray-text-color: #a6acb6;
+        --btn-color: #2885FF;
+        --name-gray-color: #a4aab3;
+        --reply-link-color: #ababab;
+        --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+    }
+    html.light-theme body {
+        --text-color: #000;
+        --bkg-color: #fff;
+        --link-color: #0071bc;
+        --visited-link-color: #205493;
+        --header-link-color: #494440;
+        --gray-text-color: #5b616b;
+        --btn-color: #00449e;
+        --name-gray-color: #5b616b;
+        --reply-link-color: #757575;
+        --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+    }
+  }
+  
+body {
+    background: var(--bkg-color);
+    color: var(--text-color);
+}
+a[href] {
+    color: var(--link-color);
+}
+
+a[href]:visited {
+    color: var(--visited-link-color);
+}
+
+.Site-header .wrapper a {
+    color: var(--header-link-color);
+}
+
+.post-date, .post__date, .Site-footer .author, figure .image-caption {
+    color: var(--gray-text-color);
+}
+
+.github-icon {
+    background: var(--github-icon-url);
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196F3;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 2px;
+    box-sizing: border-box;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    z-index: 5;
+  }
+
+
+  html.light-theme input + .slider {
+    background-color: #212121;
+  }
+  
+  input:focus + .slider:before {
+    box-shadow: 0 0 2px 3px #0099e0;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 28px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .left {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      top: 1px;
+      left: 5px;
+  }
+  .right {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      top: 1px;
+      right: 5px;
+  }
+  .hidden {
+      visibility: hidden;
+  }

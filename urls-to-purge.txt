@@ -1,1 +1,3 @@
-/posts/cdn/
+All posts
+/
+/about/

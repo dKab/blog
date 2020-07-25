@@ -63,31 +63,12 @@ textarea.textfield__input {
 }
 .comment__reply-link {
     cursor: pointer;
-    color: #757575;
     border: none;
     background: transparent;
     font-size: 1em;
 }
 .comment__reply-link:hover .comment-reply-button__text {
   text-decoration: underline;
-}
-
-.mdl-card {
-    min-height: 200px;
-    overflow: hidden;
-    z-index: 1;
-    position: relative;
-    background: #fff;
-    box-sizing: border-box;
-}
-
-.mdl-shadow--16dp {
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
-}
-.mdl-card__supporting-text {
-    overflow: hidden;
-    padding: 1.15rem;
-    width: 90%;
 }
 
 .disabled input,
@@ -141,10 +122,6 @@ textarea.textfield__input {
     border: 2px solid black;
 }
 
-.comment__author {
-    color: #5b616b;
-}
-
 /**************************\
   Basic Modal Styles
 \**************************/
@@ -166,7 +143,6 @@ textarea.textfield__input {
   }
   
   .modal__container {
-    background-color: #fff;
     padding: 30px;
     max-width: 500px;
     max-height: 100vh;
@@ -187,7 +163,6 @@ textarea.textfield__input {
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 1.25;
-    color: #00449e;
     box-sizing: border-box;
   }
   
@@ -202,7 +177,6 @@ textarea.textfield__input {
     margin-top: 2rem;
     margin-bottom: 2rem;
     line-height: 1.5;
-    color: rgba(0,0,0,.8);
   }
   
   .modal__btn {
@@ -230,11 +204,6 @@ textarea.textfield__input {
     transition: -webkit-transform .25s ease-out;
     transition: transform .25s ease-out;
     transition: transform .25s ease-out,-webkit-transform .25s ease-out;
-  }
-  
-  .modal__btn.btn-primary, .btn-primary {
-    background-color: #00449e;
-    color: #fff;
   }
   
   @keyframes mmfadeIn {
@@ -284,4 +253,28 @@ textarea.textfield__input {
   .micromodal-slide .modal__container,
   .micromodal-slide .modal__overlay {
     will-change: transform;
+  }
+
+  .comment__author {
+    color: var(--name-gray-color);
+  }
+  .comment__reply-link {
+     color:var(--reply-link-color);
+  }
+
+  .modal__btn.btn-primary, .btn-primary {
+    background-color: var(--btn-color);
+  }
+
+  .modal__title {
+    color: var(--btn-color);
+  }
+
+  .modal__container {
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+  }
+
+  .modal__content, .modal__header .modal__close::before {
+    color: var(--text-color);
   }
