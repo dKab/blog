@@ -4,9 +4,9 @@
   "description": "My blog",
   "main": "index.js",
   "scripts": {
-    "prestart": "npx uglifyjs ./assets/main.js --mangle --output ./assets/main.min.js",
+    "prestart": "npx terser ./assets/comments.js --mangle --output ./assets/comments.min.js",
     "start": "npx eleventy",
-    "poststart": "npx rimraf ./_site/assets/main.js ./assets/main.min.js",
+    "poststart": "npx rimraf ./_site/assets/comments.js ./assets/comments.min.js",
     "serve": "npx eleventy --serve",
     "lint": "npx eslint ./assets/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,7 +22,7 @@
     "date-fns": "^2.14.0",
     "markdown-it-anchor": "^5.3.0",
     "markdown-it-toc-done-right": "^4.1.0",
-    "uglify-js": "^3.10.0"
+    "terser": "^4.8.0"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

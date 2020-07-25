@@ -5,6 +5,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItTOC = require("markdown-it-toc-done-right");
+const Terser = require("terser");
 
 module.exports = function(eleventyConfig) {
   let options = {
@@ -98,6 +99,16 @@ module.exports = function(eleventyConfig) {
       return '';
     }
   });
+
+  eleventyConfig.addFilter("jsmin", function(code) {
+    let minified = Terser.minify(code);
+    if (minified.error) {
+        console.log("Terser error: ", minified.error);
+        return code;
+    }
+
+    return minified.code;
+});
 
   eleventyConfig.addFilter('absoluteUrl', (url) => `https://kabardinovd.com${url}`);
 

@@ -6,7 +6,12 @@
         <title>{{pageTitle}}</title>
         {% if SEO_Description %}
         <meta name="description" content="{{ SEO_Description }}">
-        <script src="/assets/theme-switch.js"></script> 
+        {% capture js %}
+        {% include 'theme-switch.js' %}
+        {% endcapture %}
+        <script>
+            {{ js | jsmin | safe }}
+        </script>
         {% endif %}
         {% if commentsEnabled == true  %}
         <link rel="preconnect" href="https://cdn.jsdelivr.net">
