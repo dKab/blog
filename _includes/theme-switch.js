@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
         checkbox.checked = true;
-        document.querySelector('.switch').classList.toggle('hidden');
         setTimeout(() => {
             document.querySelector('.slider').classList.toggle('animated');
         }, 500);
     }
+    document.querySelector('.switch').classList.toggle('hidden');
     checkbox.addEventListener("change", function () {
         document.documentElement.classList.toggle('dark-theme');
         document.documentElement.classList.toggle('light-theme');

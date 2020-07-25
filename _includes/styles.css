@@ -233,7 +233,7 @@ figure .image-caption {
     font-size: 0.8em;
 }
 .modal__btn.btn-primary, .btn-primary {
-    color: #fff;
+    color: var(--btn-text-color);
 }
 
 body {
@@ -271,6 +271,7 @@ body {
         --header-link-color: #aab3b6;
         --gray-text-color: #a6acb6;
         --btn-color: #2885FF;
+        --btn-text-color: #000;
         --name-gray-color: #a4aab3;
         --reply-link-color: #ababab;
         --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
@@ -283,6 +284,7 @@ body {
         --header-link-color: #494440;
         --gray-text-color: #5b616b;
         --btn-color: #00449e;
+        --btn-text-color: #fff;
         --name-gray-color: #5b616b;
         --reply-link-color: #757575;
         --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
