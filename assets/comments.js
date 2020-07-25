@@ -1,7 +1,8 @@
 var form = document.querySelector('.js-form');
 form.addEventListener('submit', function(event) {
     var button = document.querySelector('#comment-form-submit');
-    button.innerHTML = '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...';
+    button.innerHTML = `<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending... 
+      This might take a few moments. Please wait.`;
     button.setAttribute('disabled', true);
     form.classList.add('disabled');
     var xhr = new XMLHttpRequest();
