@@ -337,7 +337,13 @@ a[href]:visited {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #2196F3;
+  }
+
+  .slider.animated {
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider.animated:before {
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -351,14 +357,15 @@ a[href]:visited {
     box-sizing: border-box;
     bottom: 2px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
     z-index: 5;
   }
 
 
   html.light-theme input + .slider {
     background-color: #212121;
+  }
+  html.dark-theme input + .slider {
+    background-color: #2196F3;
   }
   
   input:focus + .slider:before {
@@ -392,5 +399,9 @@ a[href]:visited {
       position: absolute;
       z-index: 3;
       top: 1px;
-      right: 5px;
+      right: 10px;
+  }
+
+  .hidden {
+      visibility: hidden;
   }
