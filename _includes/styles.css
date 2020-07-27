@@ -398,7 +398,7 @@ a[href]:visited {
       top: 50%;
       width: 22px;
       height: 22px;
-      background: url(/assets/graphics/2600_color.png) no-repeat center;
+      background: url(/assets/graphics/2600.svg) no-repeat center;
       background-size: contain;
   }
   .right {
@@ -410,7 +410,7 @@ a[href]:visited {
       transform: translateY(-50%);
       width: 22px;
       height: 22px;
-      background: url(/assets/graphics/1F31C_color.png) no-repeat center;
+      background: url(/assets/graphics/1F31C.svg) no-repeat center;
       background-size: contain;
   }
 
