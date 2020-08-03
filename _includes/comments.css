@@ -38,6 +38,7 @@ textarea.textfield__input {
     margin: 4px 0px 0px 0px;
     height: 2.5rem;
     width: 100%;
+    font-size: 1em;
 }
 
 .btn-primary {
@@ -277,4 +278,15 @@ textarea.textfield__input {
 
   .modal__content, .modal__header .modal__close::before {
     color: var(--text-color);
+  }
+
+  .info-message {
+    margin-top: 0.5em;
+  }
+  #comment-form-reply {
+    vertical-align: unset;
+  }
+
+  textarea, input[type=text], input[type=email] {
+    font-size: 1em;
   }

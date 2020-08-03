@@ -3,7 +3,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body {
@@ -319,6 +319,7 @@ a[href]:visited {
     display: inline-block;
     width: 1em;
     height: 1em;
+    vertical-align: text-top;
 }
 
 .switch {
@@ -418,4 +419,8 @@ a[href]:visited {
 
   .hidden {
       visibility: hidden;
+  }
+
+  .twitter-icon {
+      vertical-align: sub;
   }
