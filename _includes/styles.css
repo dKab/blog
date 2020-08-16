@@ -266,6 +266,7 @@ p > code {
     word-break: break-all;
     font-size: 0.85em;
     background: var(--code-text-background);
+    color: var(--code-text-color);
     border-radius: 5px;
     padding: 0 0.15em;
 }
@@ -290,6 +291,7 @@ body {
     --paragraph-text-weight: 400;
     --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
     --code-text-background: #DCDCDC;
+    --code-text-color: #000;
   }
   html.dark-theme body {
     --text-color: #D3D3D3;
@@ -305,6 +307,7 @@ body {
     --paragraph-text-weight: 200;
     --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
     --code-text-background: #686868;
+    --code-text-color: #E7E7E7;
   }
   
   @media (prefers-color-scheme: dark) {
@@ -323,6 +326,7 @@ body {
         --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
         --paragraph-text-weight: 200;
         --code-text-background: #686868;
+        --code-text-color: #E7E7E7;
     }
     html.light-theme body {
         --text-color: #000;
@@ -338,6 +342,7 @@ body {
         --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
         --paragraph-text-weight: 400;
         --code-text-background: #DCDCDC;
+        --code-text-color: #000;
     }
   }
   
