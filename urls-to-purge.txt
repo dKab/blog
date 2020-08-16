@@ -1,1 +1,3 @@
-/assets/comments.min.js
+/about/
+/
+All posts

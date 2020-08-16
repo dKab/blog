@@ -3,21 +3,60 @@
 }
 
 html {
-    font-size: 18px;
+    font-size: 20px;
+}
+
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-family: 'Crimson Pro Variable';
+        font-style: normal;
+        src: url(/assets/fonts/CrimsonPro-VariableFont_wght-subset.woff2) format("woff2"),
+            url(/assets/fonts/CrimsonPro-VariableFont_wght-subset.zopfli.woff) format("woff"),
+            url(/assets/fonts/CrimsonPro-VariableFont_wght-subset.ttf) format("truetype");
+        font-weight: 1 999;
+    }
+}
+
+@font-face {
+    font-family: 'Crimson Pro Static';
+    font-style: normal;
+    src: url(/assets/fonts/CrimsonPro-Regular-subset.woff2) format('woff2'),
+      url(/assets/fonts/CrimsonPro-Regular-subset.zopfli.woff) format('woff'),
+      url(/assets/fonts/CrimsonPro-Regular-subset.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crimson Pro Static';
+    font-style: normal;
+    src: url(/assets/fonts/CrimsonPro-ExtraLight-subset.woff2) format('woff2'),
+      url(/assets/fonts/CrimsonPro-ExtraLight-subset.zopfli.woff) format('woff'),
+      url(/assets/fonts/CrimsonPro-ExtraLight-subset.ttf) format('truetype');
+    font-weight: 200;
+    font-display: swap;
 }
 
 body {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    font-family: 'Crimson Pro Static';
     font-size: 1rem;
     font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
     line-height: 1.65rem;
     margin: 0 0.6rem;
 }
 
-h1 {
+@supports (font-variation-settings: normal) {
+    body {
+        font-family: 'Crimson Pro Variable';
+        font-variant: normal;
+    }
+}
+
+h1, h2, h3, h4, .Site-header, .Site-footer {
     font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+}
+
+h1 {
     font-size: 1.65rem;
     font-style: normal;
     font-variant: normal;
@@ -26,7 +65,6 @@ h1 {
 }
 
 h3 {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
     font-size: 1.21rem;
     font-style: normal;
     font-variant: normal;
@@ -35,8 +73,6 @@ h3 {
 }
 
 blockquote {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-    font-size: 1.21rem;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
@@ -44,12 +80,15 @@ blockquote {
 }
 
 pre {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-    font-size: 0.79rem;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
     line-height: 1.65rem;
+    white-space: pre-wrap;
+}
+
+pre > code {
+   font-size: 0.8rem;
 }
 
 .wrapper {
@@ -98,13 +137,14 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 .Site-footer .wrapper {
     text-align: center;
     padding: 1em 0;
-    font-size: 0.9rem;
-}
-
-.Site-footer .wrapper {
+    font-size: 0.7rem;
     display: flex;
     justify-content: space-between;
     text-align: left;
+}
+
+.Site-footer .wrapper p {
+    font-weight: 400;
 }
 
 .Site-footer .wrapper .github-link {
@@ -116,10 +156,6 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 }
 
 @media screen and (min-width: 500px) {
-    .Site-footer .wrapper {
-        font-size: 1em;
-    }
-
     .table-of-contents li {
         margin-top: 0;
     }
@@ -228,6 +264,10 @@ figure {
 
 p > code {
     word-break: break-all;
+    font-size: 0.85em;
+    background: var(--code-text-background);
+    border-radius: 5px;
+    padding: 0 0.15em;
 }
 figure .image-caption {
     font-size: 0.8em;
@@ -247,10 +287,12 @@ body {
     --btn-text-color: #fff;
     --name-gray-color: #5b616b;
     --reply-link-color: #757575;
+    --paragraph-text-weight: 400;
     --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+    --code-text-background: #DCDCDC;
   }
   html.dark-theme body {
-    --text-color: #E7E8EB;
+    --text-color: #D3D3D3;
     --bkg-color: #212121;
     --link-color: rgb(75, 179, 255);
     --visited-link-color: rgb(94, 187, 255);
@@ -260,7 +302,9 @@ body {
     --btn-text-color: #000;
     --name-gray-color: #a4aab3;
     --reply-link-color: #ababab;
+    --paragraph-text-weight: 200;
     --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+    --code-text-background: #686868;
   }
   
   @media (prefers-color-scheme: dark) {
@@ -277,6 +321,8 @@ body {
         --name-gray-color: #a4aab3;
         --reply-link-color: #ababab;
         --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+        --paragraph-text-weight: 200;
+        --code-text-background: #686868;
     }
     html.light-theme body {
         --text-color: #000;
@@ -290,6 +336,8 @@ body {
         --name-gray-color: #5b616b;
         --reply-link-color: #757575;
         --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+        --paragraph-text-weight: 400;
+        --code-text-background: #DCDCDC;
     }
   }
   
@@ -297,8 +345,20 @@ body {
     background: var(--bkg-color);
     color: var(--text-color);
 }
+p {
+    font-weight: var(--paragraph-text-weight);
+}
+@supports (font-variation-settings: normal) {
+    p {
+        font-variation-settings: 'wght' var(--paragraph-text-weight);
+    }
+    .Site-footer .wrapper p {
+        font-variation-settings: 'wght' 400;
+    }
+}
+
 a[href] {
-    color: var(--link-color);
+    color: var(--link-color) !important;
 }
 
 a[href]:visited {

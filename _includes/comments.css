@@ -31,7 +31,7 @@ textarea.textfield__input {
 }
 .button {
     border: none;
-    padding: 4px 8px;
+    padding: 0 1em;
     overflow: hidden;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
@@ -66,7 +66,7 @@ textarea.textfield__input {
     cursor: pointer;
     border: none;
     background: transparent;
-    font-size: 1em;
+    font-size: 0.75em;
 }
 .comment__reply-link:hover .comment-reply-button__text {
   text-decoration: underline;
