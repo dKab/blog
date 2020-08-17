@@ -4,6 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <title>{{pageTitle}}</title>
+        {% if SEO_Description %}
+        <meta name="description" content="{{ SEO_Description }}">
+        {% capture js %}
+        {% include 'theme-switch.js' %}
+        {% endcapture %}
+        <script>
+            {{ js | jsmin | safe }}
+        </script>
+        {% endif %}
+        {% if commentsEnabled == true  %}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        {% endif %}
         <!-- capture the CSS content as liquid variable -->
         {% capture css %}
         {% include 'styles.css' %}
@@ -33,6 +45,11 @@
     <header class="Site-header">
         <div class="wrapper">
             <a class="title" href="/">Yet another blog</a>
+            <label class="switch hidden" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <span aria-hidden="true" class="left"></span><span aria-hidden="true" class="right"></span>
+                <input id="theme-switcher" type="checkbox">
+                <span class="slider round" aria-hidden="true"></span>
+            </label>
             <a href="/about/">About</a>
         </div>
     </header>
@@ -44,9 +61,19 @@
                     {{ page.date | formatDate: "dd MMM yyyy" }}
                 </p>
             {%- endif -%}
-            {{ content }}
+            <article>
+                {{ content }}
+            </article>
             {%- if page.url != '/' -%}
-                    <a class="home-link" href="/">&#8592; Home</a>
+                    <nav>
+                        <a class="home-link" href="/">&#8592; Home</a>
+                        {%- if page.url contains "/posts/" -%}
+                          <div class="posts">
+                            {% getPreviousPost page.url collections.posts %}
+                            {% getNextPost page.url collections.posts %}
+                          </div>
+                        {% endif %}
+                    </nav>
             {%- endif -%}
             {% if commentsEnabled == true %}
                 {% include 'comments' %}
@@ -58,20 +85,26 @@
         <section>
         <p class="title">
         Yet another blog
-        </p> 
-        <p class="author">Dmitrii Kabardinov</p></section>
+        </p>
         <p>
             <a href="mailto:dkabardinov@gmail.com">dkabardinov@gmail.com</a>
         </p>
-        <p class="twitter profile">
-            <a href="https://twitter.com/dkabardinov">
-                <img class="icon" src="/assets/graphics/twitter.svg" aria-hidden="true" />dkabardinov
-            </a>
-        </p>
-        <p>
-           <a title="GitHub profile" href="https://github.com/dKab"><img class="icon" aria-hidden="true" src="/assets/graphics/github.svg">dKab</a>
-        </p>
+        </section>
+        <section>
+         <p class="author">Dmitrii Kabardinov</p>
+            <p class="twitter profile">
+                <a href="https://twitter.com/dkabardinov">
+                    <img class="icon twitter-icon" src="/assets/graphics/twitter.svg" aria-hidden="true" />dkabardinov
+                </a>
+            </p>
+            <p class="github-link">
+               <a title="GitHub profile" aria-label="Github profile" href="https://github.com/dKab"><i class="icon github-icon" aria-hidden="true"></i>dKab</a>
+            </p>
+        </section>
         </div>
     </footer>
+    {% if commentsEnabled == true %}
+        {% include 'comment-result-modal' %}
+    {% endif %}
     </body>
 </html>

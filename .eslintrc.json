@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 11
+    },
+    "rules": {
+        "no-useless-escape": 0
+    },
+    "globals": {
+        "MicroModal": "readonly",
+        "grecaptcha": "readonly"
+    }
+}

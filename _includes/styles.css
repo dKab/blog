@@ -1,19 +1,62 @@
+:root {
+    color-scheme: light dark; /* both supported */
+}
+
 html {
-    font-size: 16px;
+    font-size: 20px;
+}
+
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-family: 'Crimson Pro Variable';
+        font-style: normal;
+        src: url(/assets/fonts/CrimsonPro-VariableFont_wght-subset.woff2) format("woff2"),
+            url(/assets/fonts/CrimsonPro-VariableFont_wght-subset.zopfli.woff) format("woff"),
+            url(/assets/fonts/CrimsonPro-VariableFont_wght-subset.ttf) format("truetype");
+        font-weight: 1 999;
+    }
+}
+
+@font-face {
+    font-family: 'Crimson Pro Static';
+    font-style: normal;
+    src: url(/assets/fonts/CrimsonPro-Regular-subset.woff2) format('woff2'),
+      url(/assets/fonts/CrimsonPro-Regular-subset.zopfli.woff) format('woff'),
+      url(/assets/fonts/CrimsonPro-Regular-subset.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crimson Pro Static';
+    font-style: normal;
+    src: url(/assets/fonts/CrimsonPro-ExtraLight-subset.woff2) format('woff2'),
+      url(/assets/fonts/CrimsonPro-ExtraLight-subset.zopfli.woff) format('woff'),
+      url(/assets/fonts/CrimsonPro-ExtraLight-subset.ttf) format('truetype');
+    font-weight: 200;
+    font-display: swap;
 }
 
 body {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    font-family: 'Crimson Pro Static';
     font-size: 1rem;
     font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
     line-height: 1.65rem;
     margin: 0 0.6rem;
 }
 
-h1 {
+@supports (font-variation-settings: normal) {
+    body {
+        font-family: 'Crimson Pro Variable';
+        font-variant: normal;
+    }
+}
+
+h1, h2, h3, h4, .Site-header, .Site-footer {
     font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+}
+
+h1 {
     font-size: 1.65rem;
     font-style: normal;
     font-variant: normal;
@@ -22,7 +65,6 @@ h1 {
 }
 
 h3 {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
     font-size: 1.21rem;
     font-style: normal;
     font-variant: normal;
@@ -31,8 +73,6 @@ h3 {
 }
 
 blockquote {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-    font-size: 1.21rem;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
@@ -40,25 +80,20 @@ blockquote {
 }
 
 pre {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-    font-size: 0.79rem;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
     line-height: 1.65rem;
+    white-space: pre-wrap;
+}
+
+pre > code {
+   font-size: 0.8rem;
 }
 
 .wrapper {
     max-width: 800px;
     margin: auto;
-}
-
-a[href] {
-    color: #0071bc;
-}
-
-a[href]:visited {
-    color: #205493;
 }
 
 a {
@@ -102,14 +137,41 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 .Site-footer .wrapper {
     text-align: center;
     padding: 1em 0;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
 }
 
-@media screen and (min-width: 400px) {
-    .Site-footer .wrapper {
+.Site-footer .wrapper p {
+    font-weight: 400;
+}
+
+.Site-footer .wrapper .github-link {
+    display: none;
+}
+
+.table-of-contents li {
+    margin-top: 0.5em;
+}
+
+@media screen and (min-width: 500px) {
+    .table-of-contents li {
+        margin-top: 0;
+    }
+
+    .Site-footer .wrapper .github-link {
+        display: block;
+    }
+
+    .Site-footer .wrapper section:last-child {
         display: flex;
-        justify-content: space-between;
-        text-align: left;
+        flex-grow: 10;
+        justify-content: space-around;
+    }
+
+    .Site-footer .wrapper section:first-child {
+        flex-grow: 0;
     }
 }
 
@@ -123,18 +185,17 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     .Site-header .wrapper, .Site-footer .wrapper {
         padding: 1rem 2rem;
     }
-}
-
-.Site-header .wrapper a {
-    color: #494440;
+    pre {
+        font-size: inherit;
+    }
+    .posts {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .Site-header .title {
     font-size: 1.6rem;
-}
-
-.Site-header .wrapper a {
-    color: #494440;
 }
 
 .Site-header a {
@@ -183,9 +244,6 @@ html {
 .Site-footer .icon {
     margin-right: 0.2em;
 }
-.post-date {
-    color: #5b616b
-}
 .posts-list {
     list-style: none;
     padding-left: 0;
@@ -197,14 +255,237 @@ html {
     margin: 0.5rem 0;
 }
 
-.Site-footer .author {
-    color: #5b616b;
+.wrapper img {
+    max-width: 100%;
+}
+figure {
+    text-align: center;
 }
 
-.post__date {
-    color: #5b616b;
+p > code {
+    word-break: break-all;
+    font-size: 0.85em;
+    background: var(--code-text-background);
+    color: var(--code-text-color);
+    border-radius: 5px;
+    padding: 0 0.15em;
+}
+figure .image-caption {
+    font-size: 0.8em;
+}
+.modal__btn.btn-primary, .btn-primary {
+    color: var(--btn-text-color);
 }
 
-pre {
-    font-size: inherit;
+body {
+    --text-color: #000;
+    --bkg-color: #fff;
+    --link-color: #0071bc;
+    --visited-link-color: #205493;
+    --header-link-color: #494440;
+    --gray-text-color: #5b616b;
+    --btn-color: #00449e;
+    --btn-text-color: #fff;
+    --name-gray-color: #5b616b;
+    --reply-link-color: #757575;
+    --paragraph-text-weight: 400;
+    --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+    --code-text-background: #DCDCDC;
+    --code-text-color: #000;
+  }
+  html.dark-theme body {
+    --text-color: #D3D3D3;
+    --bkg-color: #212121;
+    --link-color: rgb(75, 179, 255);
+    --visited-link-color: rgb(94, 187, 255);
+    --header-link-color: #aab3b6;
+    --gray-text-color: #a6acb6;
+    --btn-color: #2885FF;
+    --btn-text-color: #000;
+    --name-gray-color: #a4aab3;
+    --reply-link-color: #ababab;
+    --paragraph-text-weight: 200;
+    --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+    --code-text-background: #686868;
+    --code-text-color: #E7E7E7;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: #E7E8EB;
+        --bkg-color: #212121;
+        --link-color: rgb(75, 179, 255);
+        --visited-link-color: rgb(94, 187, 255);
+        --header-link-color: #aab3b6;
+        --gray-text-color: #a6acb6;
+        --btn-color: #2885FF;
+        --btn-text-color: #000;
+        --name-gray-color: #a4aab3;
+        --reply-link-color: #ababab;
+        --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+        --paragraph-text-weight: 200;
+        --code-text-background: #686868;
+        --code-text-color: #E7E7E7;
+    }
+    html.light-theme body {
+        --text-color: #000;
+        --bkg-color: #fff;
+        --link-color: #0071bc;
+        --visited-link-color: #205493;
+        --header-link-color: #494440;
+        --gray-text-color: #5b616b;
+        --btn-color: #00449e;
+        --btn-text-color: #fff;
+        --name-gray-color: #5b616b;
+        --reply-link-color: #757575;
+        --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+        --paragraph-text-weight: 400;
+        --code-text-background: #DCDCDC;
+        --code-text-color: #000;
+    }
+  }
+  
+body {
+    background: var(--bkg-color);
+    color: var(--text-color);
 }
+p {
+    font-weight: var(--paragraph-text-weight);
+}
+@supports (font-variation-settings: normal) {
+    p {
+        font-variation-settings: 'wght' var(--paragraph-text-weight);
+    }
+    .Site-footer .wrapper p {
+        font-variation-settings: 'wght' 400;
+    }
+}
+
+a[href] {
+    color: var(--link-color) !important;
+}
+
+a[href]:visited {
+    color: var(--visited-link-color);
+}
+
+.Site-header .wrapper a {
+    color: var(--header-link-color);
+}
+
+.post-date, .post__date, .Site-footer .author, figure .image-caption {
+    color: var(--gray-text-color);
+}
+
+.github-icon {
+    background: var(--github-icon-url);
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: text-top;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .slider.animated {
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider.animated:before {
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 2px;
+    box-sizing: border-box;
+    bottom: 2px;
+    background-color: white;
+    z-index: 5;
+  }
+
+
+  html.light-theme input + .slider {
+    background-color: #212121;
+  }
+  html.dark-theme input + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider:before {
+    box-shadow: 0 0 2px 3px #0099e0;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 28px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  .left {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      left: 5px;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 22px;
+      height: 22px;
+      background: url(/assets/graphics/2600.svg) no-repeat center;
+      background-size: contain;
+  }
+  .right {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      background: url(/assets/graphics/1F31C.svg) no-repeat center;
+      background-size: contain;
+  }
+
+  .hidden {
+      visibility: hidden;
+  }
+
+  .twitter-icon {
+      vertical-align: sub;
+  }

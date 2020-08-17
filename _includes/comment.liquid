@@ -21,7 +21,13 @@
 
   {% unless replying_to != 0 %}
     <div class="comment__meta">
-      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('comment-{{ index }}', '{{ index }}', 'respond', '{{ page.fileSlug }}', '{{ uid }}')"><span class="arrow">↪</span> Reply to {{ name }}</a>
+      <button type="button" class="comment__reply-link"
+       data-comment-id="comment-{{ index }}"
+       data-parent-id="{{ index }}"
+       data-respond-id="respond"
+       data-post-id="{{ page.fileSlug }}"
+       data-parent-uid="{{ uid }}"
+      ><span class="arrow">↪</span> <span class="comment-reply-button__text">Reply to {{ name }}</span></button>
     </div>
   {% endunless %}
 </article>

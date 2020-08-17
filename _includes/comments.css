@@ -30,21 +30,19 @@ textarea.textfield__input {
     padding: 0.5rem 0;
 }
 .button {
-    background: rgba(158,158,158,.2);
-    box-shadow: 0 2px 2px 2px rgba(0,0,0,.14);
     border: none;
-    border-radius: 2px;
-    padding: 4px 8px;
+    padding: 0 1em;
     overflow: hidden;
-    cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     margin: 4px 0px 0px 0px;
-    height: 2rem;
+    height: 2.5rem;
     width: 100%;
+    font-size: 1em;
 }
-button:hover {
-    color: white;
+
+.btn-primary {
+    width: 100%;
 }
 
 .comment__new {
@@ -66,59 +64,12 @@ button:hover {
 }
 .comment__reply-link {
     cursor: pointer;
-    color: #757575;
+    border: none;
+    background: transparent;
+    font-size: 0.75em;
 }
-
-.show-modal {
-    overflow: hidden;
-    position: relative;
-}
-.show-modal:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.85);
-}
-.show-modal .modal {
-    display: block;
-}
-.mdl-card {
-    min-height: 200px;
-    overflow: hidden;
-    z-index: 1;
-    position: relative;
-    background: #fff;
-    box-sizing: border-box;
-}
-.modal {
-    display: none;
-    position: fixed;
-    width: 330px;
-    top: 50%;
-    left: 50%;
-    margin-left: -150px;
-    margin-top: -150px;
-    min-height: 0;
-    z-index: 9999;
-    box-shadow: 0 2px 2px 2px rgba(0,0,0,.14);
-    padding: 16px;
-    border-radius: 2px;
-    background: white;
-}
-.mdl-shadow--16dp {
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
-}
-.mdl-card__supporting-text {
-    overflow: hidden;
-    padding: 1.15rem;
-    width: 90%;
-}
-.modal-title {
-    margin-bottom: 0px;
+.comment__reply-link:hover .comment-reply-button__text {
+  text-decoration: underline;
 }
 
 .disabled input,
@@ -154,13 +105,9 @@ button:hover {
 .icon.spin {
     animation: spin 2s infinite linear;
 }
-button:hover {
-    background-color: #757575;
-    color: white;
-}
 
 @media screen and (min-width: 800px) {
-    .button {
+    .btn-primary {
         width: auto;
     }
     .textfield {
@@ -171,11 +118,175 @@ button:hover {
 .arrow {
     font-weight: 900;
     background-color: #1a62bf;
-    color: white;
+    color: #fff;
     padding: 0 2px;
     border: 2px solid black;
 }
 
-.comment__author {
-    color: #5b616b;
-}
+/**************************\
+  Basic Modal Styles
+\**************************/
+
+.modal {
+    font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  }
+  
+  .modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal__container {
+    padding: 30px;
+    max-width: 500px;
+    max-height: 100vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  
+  .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    box-sizing: border-box;
+  }
+  
+  .modal__close {
+    background: transparent;
+    border: 0;
+  }
+  
+  .modal__header .modal__close:before { content: "\2715"; }
+  
+  .modal__content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  
+  .modal__btn {
+    font-size: .875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #e6e6e6;
+    color: rgba(0,0,0,.8);
+    border-style: none;
+    border-width: 0;
+    cursor: pointer;
+    -webkit-appearance: button;
+    text-transform: none;
+    overflow: visible;
+    line-height: 1.15;
+    margin: 0;
+    will-change: transform;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: -webkit-transform .25s ease-out;
+    transition: transform .25s ease-out;
+    transition: transform .25s ease-out,-webkit-transform .25s ease-out;
+  }
+  
+  @keyframes mmfadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+  
+  @keyframes mmfadeOut {
+      from { opacity: 1; }
+        to { opacity: 0; }
+  }
+  
+  @keyframes mmslideIn {
+    from { transform: translateY(15%); }
+      to { transform: translateY(0); }
+  }
+  
+  @keyframes mmslideOut {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10%); }
+  }
+  
+  .micromodal-slide {
+    display: none;
+  }
+  
+  .micromodal-slide.is-open {
+    display: block;
+  }
+  
+  .micromodal-slide[aria-hidden="false"] .modal__overlay {
+    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  
+  .micromodal-slide[aria-hidden="false"] .modal__container {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  .micromodal-slide[aria-hidden="true"] .modal__overlay {
+    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  
+  .micromodal-slide[aria-hidden="true"] .modal__container {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  .micromodal-slide .modal__container,
+  .micromodal-slide .modal__overlay {
+    will-change: transform;
+  }
+
+  .comment__author {
+    color: var(--name-gray-color);
+  }
+  .comment__reply-link {
+     color:var(--reply-link-color);
+  }
+
+  .modal__btn.btn-primary, .btn-primary {
+    background-color: var(--btn-color);
+  }
+
+  .modal__title {
+    color: var(--btn-color);
+  }
+
+  .modal__container {
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+  }
+
+  .modal__content, .modal__header .modal__close::before {
+    color: var(--text-color);
+  }
+
+  .info-message {
+    margin-top: 0.5em;
+  }
+  #comment-form-reply {
+    vertical-align: unset;
+  }
+
+  textarea, input[type=text], input[type=email] {
+    font-size: 1em;
+  }

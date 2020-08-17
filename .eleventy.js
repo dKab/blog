@@ -5,6 +5,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItTOC = require("markdown-it-toc-done-right");
+const Terser = require("terser");
 
 module.exports = function(eleventyConfig) {
   let options = {
@@ -47,6 +48,10 @@ module.exports = function(eleventyConfig) {
     return typeof val;
   });
 
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return format(dateObj, 'yyyy-MM-dd');
+  });
+
   eleventyConfig.addFilter('formatDate', function(dateOrTimestamp, formatString) {
     let date;
     if (typeof dateOrTimestamp === 'number') {
@@ -71,10 +76,45 @@ module.exports = function(eleventyConfig) {
     return parseInt(string, 10);
   });
 
+  eleventyConfig.addShortcode('getPreviousPost', (postUrl, posts) => {
+    const index = posts.findIndex(post => post.url == postUrl);
+    if (0 < index) {
+      const post = posts[index - 1];
+      return `
+        <p>Previous: <a href="${post.url}">${post.data.pageTitle}</a></p>
+      `;
+    } else {
+      return '';
+    }
+  });
+
+  eleventyConfig.addShortcode('getNextPost', (postUrl, posts) => {
+    const index = posts.findIndex(post => post.url == postUrl);
+    if ( 0 <= index && index < posts.length - 1 ) {
+      const post = posts[index + 1];
+      return `
+      <p>Next: <a href="${post.url}">${post.data.pageTitle}</a></p>
+      `;
+    } else {
+      return '';
+    }
+  });
+
+  eleventyConfig.addFilter("jsmin", function(code) {
+    let minified = Terser.minify(code);
+    if (minified.error) {
+        console.log("Terser error: ", minified.error);
+        return code;
+    }
+
+    return minified.code;
+});
+
   eleventyConfig.addFilter('absoluteUrl', (url) => `https://kabardinovd.com${url}`);
 
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('site.webmanifest');
+  eleventyConfig.addPassthroughCopy('robots.txt');
   return {
     passthroughFileCopy: true
   }
