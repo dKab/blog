@@ -12,4 +12,4 @@ Urls should not include protocol, nor domain, nor www subdamain, an example:
   
 - Write single line ```All``` to purge everything (hardly ever needed) 
 
-- Write ```All posts``` on a separate line to purge all post pages 
+- Write ```All posts``` on a separate line to purge all post pages

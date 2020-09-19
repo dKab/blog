@@ -118,6 +118,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     justify-content: space-between;
     box-sizing: border-box;
     padding: 1rem 0;
+    align-items: center;
 }
 
 .Site-header {
@@ -488,4 +489,8 @@ a[href]:visited {
 
   .twitter-icon {
       vertical-align: sub;
+  }
+
+  .Site-header .title {
+      max-width: 55%;
   }
