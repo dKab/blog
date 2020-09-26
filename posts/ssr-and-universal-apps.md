@@ -1,6 +1,6 @@
 ---
 date: 2020-09-06
-pageTitle: Server-side rendering in modern web applications
+pageTitle: Server-side Rendering In Modern Web Applications
 syntaxHighlightEnabled: true
 SEO_Description: This post describes how server-side rendering works in modern web-applications. What is a universal application? What is client-side rendering? The pros and cons of SSR and how it compares to static sites in terms of performance. Drawbacks of Universal applications.
 ---

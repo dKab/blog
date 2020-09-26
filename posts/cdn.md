@@ -1,6 +1,6 @@
 ---
 date: 2020-07-22
-pageTitle: On CDN cache management
+pageTitle: On CDN Cache Management
 syntaxHighlightEnabled: true
 SEO_Description: This post describes a simple way to purge CDN cache when a page changes on a static site. A Node.js script executed by CI server upon deployment inspects a special file in the root of the project that should contain a list of URLs that has to be purged. A pre-commit git hook is used to make sure that the list of URLs is updated with each change.
 ---

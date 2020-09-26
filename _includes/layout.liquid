@@ -61,6 +61,18 @@
                     {{ page.date | formatDate: "dd MMM yyyy" }}
                 </p>
             {%- endif -%}
+            {% if coverPhoto %}
+                <figure class="cover-photo">
+                    <picture>
+                        <source srcset="/assets/images/{{ coverPhoto }} " media="(min-width: 376px)" />
+                        <source srcset="/assets/images/{{ coverPhotoSmall }}" media="(max-width: 376px)" />
+                        <img src="/assets/images/{{ coverPhotoSmall }}"
+                        alt="{{ coverPhotoAltText }}"
+                         />
+                    </picture>
+                    <span class="image-caption">Photo: {{ coverPhotoAuthor }}</span>
+                </figure>
+            {% endif %}
             <article>
                 {{ content }}
             </article>

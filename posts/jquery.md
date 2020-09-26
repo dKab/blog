@@ -1,6 +1,6 @@
 ---
 date: 2020-07-12
-pageTitle: Modal dialogs accessibility improvement and jQuery removal
+pageTitle: Modal Dialogs Accessibility Improvement And JQuery Removal
 syntaxHighlightEnabled: true
 SEO_Description: In this post, I describe how I got rid of jQuery dependency in my comment form. I also talk about Micromodal npm package — minimalistic accessible modal window library.
 ---

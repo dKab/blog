@@ -6,6 +6,10 @@ html {
     font-size: 20px;
 }
 
+.Site-content  > img {
+ max-width: 100%;
+}
+
 @supports (font-variation-settings: normal) {
     @font-face {
         font-family: 'Crimson Pro Variable';
@@ -61,7 +65,7 @@ h1 {
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
-    line-height: 1.65rem;
+    line-height: 1.85rem;
 }
 
 h3 {
@@ -184,7 +188,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
         padding: 0 2rem;
     }
     .Site-header .wrapper, .Site-footer .wrapper {
-        padding: 1rem 2rem;
+        padding: 0.3rem 2rem;
     }
     pre {
         font-size: inherit;
@@ -273,6 +277,11 @@ p > code {
 }
 figure .image-caption {
     font-size: 0.8em;
+    display: inline-block;
+    line-height: 1.3em;
+}
+figure .image-caption a {
+    color: inherit;
 }
 .modal__btn.btn-primary, .btn-primary {
     color: var(--btn-text-color);
@@ -375,7 +384,8 @@ a[href]:visited {
     color: var(--header-link-color);
 }
 
-.post-date, .post__date, .Site-footer .author, figure .image-caption {
+.post-date, .post__date, .Site-footer .author, figure .image-caption,
+figure .image-caption a[href] {
     color: var(--gray-text-color);
 }
 
@@ -494,3 +504,13 @@ a[href]:visited {
   .Site-header .title {
       max-width: 55%;
   }
+
+  @media screen and (min-width: 800px) {
+    .Site-header .title {
+        max-width: 300px;
+    }
+}
+
+figure.cover-photo {
+    margin: 0;
+}

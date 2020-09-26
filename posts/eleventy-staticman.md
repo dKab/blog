@@ -1,6 +1,6 @@
 ---
 date: 2020-06-21
-pageTitle: Building a static blog with Eleventy and Staticman 
+pageTitle: Building A Static Blog With Eleventy And Staticman 
 syntaxHighlightEnabled: true
 SEO_Description: This article describes my experience integrating 11ty-based static blog with Staticman — an opensource tool for adding user-generated content (e.g. comments) to static sites.
 ---
