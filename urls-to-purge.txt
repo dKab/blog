@@ -1,3 +1,1 @@
-/about/
-/
-All posts
+/posts/server/
