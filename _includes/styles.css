@@ -121,16 +121,8 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 1rem 0;
+    padding: 1.5rem 0.5rem 0 0;
     align-items: center;
-}
-
-.Site-header {
-    border-bottom: 1px solid #DDD;
-}
-
-.Site-footer {
-    border-top: 1px solid #ddd;
 }
 
 .wrapper {
@@ -141,7 +133,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 
 .Site-footer .wrapper {
     text-align: center;
-    padding: 1em 0;
+    padding: 0 0 1em 0;
     font-size: 0.7rem;
     display: flex;
     justify-content: space-between;
@@ -187,8 +179,12 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     .wrapper {
         padding: 0 2rem;
     }
-    .Site-header .wrapper, .Site-footer .wrapper {
-        padding: 0.3rem 2rem;
+    .Site-header .wrapper {
+        padding: 1.5rem 2rem 0;
+
+    }
+    .Site-footer .wrapper {
+        padding: 0 2rem 0.5rem;
     }
     pre {
         font-size: inherit;
@@ -199,8 +195,8 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     }
 }
 
-.Site-header .title {
-    font-size: 1.6rem;
+.Site-header img {
+    max-height: 45px;
 }
 
 .Site-header a {
@@ -389,6 +385,10 @@ figure .image-caption a[href] {
     color: var(--gray-text-color);
 }
 
+.Site-footer .about {
+    font-size: 1rem;
+}
+
 .github-icon {
     background: var(--github-icon-url);
     background-size: contain;
@@ -502,7 +502,9 @@ figure .image-caption a[href] {
   }
 
   .Site-header .title {
-      max-width: 55%;
+      max-width: 65%;
+      display: inline-block;
+      line-height: 1rem;
   }
 
   @media screen and (min-width: 800px) {
