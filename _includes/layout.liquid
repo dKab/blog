@@ -93,15 +93,12 @@
     </main>
     <footer class="Site-footer">
         <div class="wrapper">
-        <section>
         <p class="title">
         The Static Blog
         </p>
-        <p>
+        {% comment %} <p class="email">
             <a href="mailto:dkabardinov@gmail.com">dkabardinov@gmail.com</a>
-        </p>
-        </section>
-        <section>
+        </p> {% endcomment %}
          <p class="about"><a href="/about/">About</a></p>
             <p class="twitter profile">
                 <a href="https://twitter.com/dkabardinov">
@@ -111,7 +108,6 @@
             <p class="github-link">
                <a title="GitHub profile" aria-label="Github profile" href="https://github.com/dKab"><i class="icon github-icon" aria-hidden="true"></i>dKab</a>
             </p>
-        </section>
         </div>
     </footer>
     {% if commentsEnabled == true %}

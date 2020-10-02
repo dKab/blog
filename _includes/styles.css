@@ -133,7 +133,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 
 .Site-footer .wrapper {
     text-align: center;
-    padding: 0 0 1em 0;
+    padding: 0 1rem 1rem 0;
     font-size: 0.7rem;
     display: flex;
     justify-content: space-between;
@@ -144,7 +144,10 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
     font-weight: 400;
 }
 
-.Site-footer .wrapper .github-link {
+.Site-footer .github-link,
+.Site-footer .twitter,
+.Site-footer .email
+{
     display: none;
 }
 
@@ -157,18 +160,8 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
         margin-top: 0;
     }
 
-    .Site-footer .wrapper .github-link {
+    .Site-footer .wrapper .twitter {
         display: block;
-    }
-
-    .Site-footer .wrapper section:last-child {
-        display: flex;
-        flex-grow: 10;
-        justify-content: space-around;
-    }
-
-    .Site-footer .wrapper section:first-child {
-        flex-grow: 0;
     }
 }
 
@@ -184,7 +177,7 @@ h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:ho
 
     }
     .Site-footer .wrapper {
-        padding: 0 2rem 0.5rem;
+        padding: 0 2rem 1rem;
     }
     pre {
         font-size: inherit;
@@ -510,6 +503,11 @@ figure .image-caption a[href] {
   @media screen and (min-width: 800px) {
     .Site-header .title {
         max-width: 300px;
+    }
+
+    .Site-footer .github-link,
+    .Site-footer .email {
+        display: block;
     }
 }
 
