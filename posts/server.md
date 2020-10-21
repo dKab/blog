@@ -15,7 +15,7 @@ My server went down the other day and since I had to address it anyway, I decide
 
 ## Why I went with http-server at first
 
-I host this blog on an instance of AWS EC2, which runs ubuntu. For those who are unfamiliar with AWS EC2, it's a virtual machine that runs in the cloud and that you can do anything you want with. Because of this freedom, when the time came to chose the HTTP server that would serve my static files I had a lot of options. I considered different candidates but there were two clear favorites: NGINX and, perhaps, less known Node.js module called [http-server](https://www.npmjs.com/package/http-server).
+I host this blog on an instance of AWS EC2, which runs ubuntu. For those who are unfamiliar with AWS EC2, it's a virtual machine that runs in the cloud and that you can do anything you want with. Because of this freedom, when the time came to choose the HTTP server that would serve my static files I had a lot of options. I considered different candidates but there were two clear favorites: NGINX and, perhaps, less known Node.js module called [http-server](https://www.npmjs.com/package/http-server).
 
 Having encountered NGINX on a few work projects, I was somewhat familiar with it, and I knew it could do the job flawlessly. There was just one hurdle associated with it for me - it required some configuring, and I was too impatient for that. I wanted a tool that didn't require any configuration at all. Given a folder, it should start serving files from this folder. In other words, it should JUST WORK. And http-server offered exactly that. I used it a couple of times when I needed a development server for one of my pet projects, and I liked it. Now I wanted to see how it would perform in production. So I picked it over NGINX. 
 
