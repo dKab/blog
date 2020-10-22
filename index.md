@@ -11,5 +11,3 @@ SEO_Description: A blog about web-development and everything related.
     </li>
 {%- endfor -%}
 </ul>
-
-Subscribe to [RSS feed](/feed.xml)

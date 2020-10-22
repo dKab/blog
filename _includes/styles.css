@@ -289,6 +289,7 @@ body {
     --reply-link-color: #757575;
     --paragraph-text-weight: 400;
     --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+    --rss-icon-url: url(/assets/graphics/rss.svg) no-repeat top left;
     --code-text-background: #DCDCDC;
     --code-text-color: #000;
   }
@@ -305,6 +306,7 @@ body {
     --reply-link-color: #ababab;
     --paragraph-text-weight: 200;
     --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+    --rss-icon-url: url(/assets/graphics/rss-white.svg) no-repeat top left;
     --code-text-background: #686868;
     --code-text-color: #E7E7E7;
   }
@@ -323,6 +325,7 @@ body {
         --name-gray-color: #a4aab3;
         --reply-link-color: #ababab;
         --github-icon-url: url(/assets/graphics/github-inverted.svg) no-repeat top left;
+        --rss-icon-url: url(/assets/graphics/rss-white.svg) no-repeat top left;
         --paragraph-text-weight: 200;
         --code-text-background: #686868;
         --code-text-color: #E7E7E7;
@@ -339,6 +342,7 @@ body {
         --name-gray-color: #5b616b;
         --reply-link-color: #757575;
         --github-icon-url: url(/assets/graphics/github.svg) no-repeat top left;
+        --rss-icon-url: url(/assets/graphics/rss.svg) no-repeat top left;
         --paragraph-text-weight: 400;
         --code-text-background: #DCDCDC;
         --code-text-color: #000;
@@ -389,6 +393,15 @@ figure .image-caption a[href] {
     width: 1em;
     height: 1em;
     vertical-align: text-top;
+}
+
+.rss-icon {
+    background: var(--rss-icon-url);
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
 }
 
 .switch {
