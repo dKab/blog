@@ -1,1 +1,2 @@
-/feed.xml
+/posts/first-post/
+/posts/ssr-and-universal-apps/
