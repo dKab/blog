@@ -31,7 +31,7 @@ It helps you avoid the most common pitfalls by running a set of audits on your s
 
 ## 3. Accessible colors
 
-Accessibility is another thing that I tried to keep tabs on during this blog's development. I've expanded my understanding of accessibility beyond just using ARIA attributes. Trying to tick all the boxes for the Lighthouse accessibility audit I learned about color contrast standards. I relied heavily on an awesome tool https://accessible-colors.com/ to make my color scheme AA compliant. It can recommend you necessary adjustments to the color to make the contrast ratio high enough so that your content is discernable for people with all kinds of vision impairments.
+Accessibility is another thing that I tried to keep tabs on during this blog's development. I've expanded my understanding of accessibility beyond just using ARIA attributes. Trying to tick all the boxes for the Lighthouse accessibility audit I learned about color contrast standards. I relied heavily on [Accessible Colors](https://accessible-colors.com/), an awesome tool that can recommend necessary adjustments to your color scheme to make the contrast ratio high enough, so that your content is discernable for people with all kinds of vision impairments.
 
 ## 4. Responsive images
 My current project at my job is more of a web-application than a traditional web-site and we barely use images there, let alone large images. So I didn't need responsive images. A blog is a different story though.
