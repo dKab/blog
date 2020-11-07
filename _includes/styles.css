@@ -527,3 +527,11 @@ figure .image-caption a[href] {
 figure.cover-photo {
     margin: 0;
 }
+
+strong {
+    font-variation-settings: 'wght' 600;
+}
+
+ol {
+    /* list-style: none; */
+}
