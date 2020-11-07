@@ -25,7 +25,7 @@ From the start, I've been focused on performance for my blog, so, naturally, I h
 It helps you avoid the most common pitfalls by running a set of audits on your site and generating neat reports with links to learning materials on each problem. Tackling all of them and getting to that precious "100" score is no easy feat, but it will most certainly improve your site's user experience and ensure fast loading. From now on I'm going to use Lighthouse on all my projects. By the way, Eleventy has a [Performance Leaderboard](https://www.11ty.dev/speedlify/) of the sites built with it. You can submit your site to participate and it will be ranked according to the Lighthouse score.
 
 <figure>
-    <img src="/assets/images/Lighthouse.PNG" alt="Four numbers in green circles in a row. Each stands for Performance, Accessibility, Best Practices and SEO Lighthouse score" />
+    <img src="/assets/images/lighthouse.PNG" alt="Four numbers in green circles in a row. Each stands for Performance, Accessibility, Best Practices and SEO Lighthouse score" />
     <span class="image-caption">Lighthouse score example from one of my post pages</span>
 </figure>
 
