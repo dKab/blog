@@ -11,7 +11,7 @@ ${toc}
 
 As I've mentioned in the [previous post](/posts/eleventy-staticman/#staticman-for-comments), I brought over the code for my comments section from another website. Even though I was spared having to write everything from scratch myself, porting Jekyll templates to my eleventy blog turned out to be more time-consuming than I expected. So, by the time I was done with it I was eager to finally deploy my blog and call it a night. I didn't have the energy to polish everything, even though there were a few things I didn't like in the code. The main issue was that the code was using jQuery. 
 
-It's not a secret in 2020 that you most likely don't need jQuery. There's even a website whose purpose is solely to communicate this idea: [youmightneedjquery.com](http://youmightnotneedjquery.com/). But it's funny how it turned out to be especially true in my case, to the degree that it can be a textbook example of this principle. The minified version of the jQuery that my template was referencing was 83 Kb.
+It's not a secret in 2020 that you most likely don't need jQuery. There's even a website whose purpose is solely to communicate this idea: [youmightnotneedjquery.com](http://youmightnotneedjquery.com/). But it's funny how it turned out to be especially true in my case, to the degree that it can be a textbook example of this principle. The minified version of the jQuery that my template was referencing was 83 Kb.
 It's a problem for two reasons:
 
 1. Performance
