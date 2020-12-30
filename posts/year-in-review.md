@@ -41,7 +41,7 @@ Another thing that I've discovered this year when I dived into the rabbit hole o
 ## Photography
 
 I didn't do a lot of photography in the first half of the year, because, you know, the lockdown. There's not much to shoot inside one's apartment after all. I also had had issues with my Nikon for some time. It's been nagging me with this error, refusing to read memory card, and oftentimes I wouldn't bother taking it with me when I was going out because of how bulky it was. But I missed photography. So I decided to replace the old camera with something lighter, plus, I was eager to try a full-frame camera. 
-In August I sold the Nikon and bought Sony aii with a small 35mm fix lens. It's much easier to carry around, as it can even fit in the pocket of my jacket. I took it with me on my trip to Crimea at the end of the summer, and shot a few beautiful pictures there. I continued to shoot steadily throughout the rest of the year, so this purchase has breathed new life into my hobby.
+In August I sold the Nikon and bought Sony a7ii with a small 35mm fix lens. It's much easier to carry around, as it can even fit in the pocket of my jacket. I took it with me on my trip to Crimea at the end of the summer, and shot a few beautiful pictures there. I continued to shoot steadily throughout the rest of the year, so this purchase has breathed new life into my hobby.
 
 ## Crimea
 
@@ -53,7 +53,7 @@ This might sound cliché, but the pandemic, or rather the quarantine that it cau
 
 ## Work
 
-In the spring I finally passed an assessment at work (from the second attempt) and upped my grade from Senior software engineer to Lead, which was nice, if only because it meant a small raise. Despite the change of title, my role on the project hasn't changed, but I still got some new responsibilities: I've been assigned as Resource Manager (I hate that term) to a couple of my colleagues. I think I've been doing a terrible job at it at first, but I think I'm getting the hang of it, and slowly getting used to the new role. Also, I've started to take more and more technical interviews. In total, I've conducted 24 interviews this year, and I'm feeling much less stress doing it than I used to even at the beginning of the year. It seems the imposter syndrome subsided a little.
+In the spring I finally passed an assessment at work (from the second attempt) and upped my grade from Senior software engineer to Lead, which was nice, if only because it meant a small raise. Despite the change of title, my role on the project hasn't changed, but I still got some new responsibilities: I've been assigned as Resource Manager (I hate that term) to a couple of my colleagues. I think I've been doing a terrible job at it at first, but I think I'm getting the hang of it, and slowly getting used to the new role. Also, I've started to take more and more technical interviews. In total, I've conducted 24 interviews this year, and I feel much less stressed when doing it compared to how it was even at the beginning of the year.
 
 ## University
 
