@@ -1,5 +1,5 @@
 ---
-date: 2020-12-25
+date: 2020-12-30
 pageTitle: 2020 Year In Review
 syntaxHighlightEnabled: false
 SEO_Description: In this post, I try to recap what I did during 2020 in different areas of my life.
@@ -30,7 +30,7 @@ Still, I'm glad I at least tried. For one, it felt good to finally do some vegan
 
 ### Blog
 
-I'm quite happy with how this blog turned out. I consider it my biggest achievement of the year. I had a lot of fun both building it and writing about building it. To gain readership I've crossposted a couple of my articles on Dev.to. The first one ([3 Reasons Why You Should Choose NGINX Over Http-server For Your Static Site ](https://dev.to/dkabardinov/3-reasons-why-you-should-choose-nginx-over-http-server-for-your-static-site-4h1a)) was very niche, and therefore went almost unnoticed, but the second one ([10 Things I've Learned While Building A Website For My Blog 📚 ](https://dev.to/dkabardinov/10-things-i-ve-learned-while-building-a-website-for-my-blog-1748)) did pretty good in terms of reactions and number of reads:
+I'm quite happy with how this blog turned out. I consider it my biggest achievement of the year. I had a lot of fun both building it and writing about building it. To gain readership I've crossposted a couple of my articles on Dev.to. The first one ([3 Reasons Why You Should Choose NGINX Over Http-server For Your Static Site ](https://dev.to/dkabardinov/3-reasons-why-you-should-choose-nginx-over-http-server-for-your-static-site-4h1a)) was very niche, and therefore went almost unnoticed, but the second one ([10 Things I've Learned While Building A Website For My Blog 📚](https://dev.to/dkabardinov/10-things-i-ve-learned-while-building-a-website-for-my-blog-1748)) did pretty good in terms of reactions and number of reads:
 
 ![A screenshot of my Dev.to dashboard with some statistics on my posts](/assets/images/dev.to.posts.PNG)
 
@@ -38,7 +38,7 @@ At the moment of writing 3934 people saw my second post on Dev.to, 138 liked or 
 
 Another thing that I've discovered this year when I dived into the rabbit hole of personal web sites building was the Indie web community. I've found many interesting people's blogs, and started to use RSS reader extensively. Most of the reading I've done this year was on my phone's RSS reader app. Honestly, it was like a breath of fresh air after social networks with their ads and never-ending algorithm-based feeds. If I had to choose one most favorite and inspirational article that I read this year, it would probably be this one: [Into the Personal-Website-Verse](https://matthiasott.com/articles/into-the-personal-website-verse).
 
-### Photograpy
+### Photography
 
 I didn't do a lot of photography in the first half of the year, because, you know, the lockdown. There's not much to shoot inside one's apartment after all. I also had had issues with my Nikon for some time. It's been nagging me with this error, refusing to read memory card, and oftentimes I wouldn't bother taking it with me when I was going out because of how bulky it was. But I missed photography. So I decided to replace the old camera with something lighter, plus, I was eager to try a full-frame camera. 
 In August I sold the Nikon and bought Sony aii with a small 35mm fix lens. It's much easier to carry around, as it can even fit in the pocket of my jacket. I took it with me on my trip to Crimea at the end of the summer, and shot a few beautiful pictures there. I continued to shoot steadily throughout the rest of the year, so this purchase has breathed new life into my hobby.
