@@ -1,1 +1,1 @@
-/posts/year-in-review/
+/posts/10-things-I-learned-building-my-personal-blog/
