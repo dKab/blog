@@ -1,6 +1,6 @@
 ---
 date: 2021-02-05
-pageTitle: Video Games, Yoga, Protests, Anxiety.
+pageTitle: Video Games, Yoga, Protests, Anxiety
 syntaxHighlightEnabled: false
 SEO_Description: Just a rant. My personal notes about current events and my life.
 ---
