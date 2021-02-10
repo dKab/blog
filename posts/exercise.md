@@ -14,7 +14,7 @@ In this post, I wanted to share a couple of tools that help me stay active. But 
 
 Everyone knows that exercises are good for your health. From kindergarten, we are taught that regular physical activity reduces risks of cardiovascular diseases, improves blood pressure, etc. All the good stuff. But you probably already know that.
 
-## 2. Endorphines
+## 2. Endorphins
 
 This is also a pretty well-known fact, I think. You can raise endorphins levels just by doing 15-mins workouts several times a week. It decreases the chances of depression and anxiety, which is great.
 
