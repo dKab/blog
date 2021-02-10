@@ -1,6 +1,6 @@
 ---
 date: 2021-02-11
-pageTitle: Hey developer, don't forget to move 🏃‍♂️
+pageTitle: Hey Developer, Don't Forget To Move 🏃‍♂️
 syntaxHighlightEnabled: false
 SEO_Description: Why it's important to exercise, and what tools can help you to exercise at home.
 ---
@@ -37,10 +37,4 @@ The two apps that I'm talking about are NTC, which is short for Nike Training Cl
 
 Anyway, if you haven't tried these apps, I highly recommend that you download them and try to experiment. See if they work for you.
 Thanks for reading, have fun and take care!
-
-
-
-
-
-
 
