@@ -15,4 +15,4 @@ The migration process went pretty seamlessly. It's actually mindblowing how easy
 
 I had a slight hiccup with changing the nameservers for my custom domain from the ones provided by Cloudflare to the Netlify ones,  and I messed it up in my AWS console (my domain is registered by AWS Route 53 Registrar, so managing it is done via AWS console, which can be confusing at times). So I ended up having a couple of days of downtime when my blog wasn't accessible during the transition until I finally figured it out and now everything is fine.
 
-My sites still seem to load pretty fast, so I'm satisfied with my new hosting.
+My site still seems to load pretty fast, so I'm satisfied with my new hosting.
