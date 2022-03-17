@@ -27,7 +27,7 @@
   "devDependencies": {
     "eslint": "^7.4.0",
     "husky": "^4.2.5",
-    "simple-git": "^2.14.0"
+    "simple-git": "^3.3.0"
   },
   "husky": {
     "hooks": {
